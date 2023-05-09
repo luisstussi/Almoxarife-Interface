@@ -1,0 +1,51 @@
+.rodateto {
+    height: 9%;
+}
+
+.logoclinica {
+    background-color: #13293D; 
+}
+
+.areadinamica {
+    height: 91%
+}
+
+.fundomenu {
+    background-color: #006494
+}
+
+.listapmenu:first-child {
+    margin-top: 10%
+}
+
+.listamenu {
+    margin-top: 3%
+}
+
+.linksmenu {
+    color:#E8F1F3
+}
+
+.linksmenu:hover {
+    color:#13293D
+}
+
+.imagensmenu {
+    position: relative;
+    top: -4px;
+}
+
+.conteudohome {
+    width: 20%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top:10%;
+}
+
+.textohome {
+    font-size: 3em ;
+    text-shadow:3px 3px 5px #44617a;
+    text-align: center;
+    color: #193045;
+    margin-bottom: 15%;
+}
