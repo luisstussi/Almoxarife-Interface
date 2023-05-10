@@ -1,5 +1,5 @@
-.rodateto {
-    height: 9%;
+.barra-navegacao {
+    background-color: #006494;
 }
 
 .logoclinica {
@@ -10,12 +10,10 @@
     height: 91%
 }
 
-.fundomenu {
-    background-color: #006494
-}
-
 .listamenu:first-child {
-    margin-top: 10%
+    margin-top: 0%;
+    background-color: #13293D;
+    padding: 10px;
 }
 
 .listamenu {
@@ -51,6 +49,6 @@
 }
 
 .imgboxhome {
-    -webkit-filter: drop-shadow(20px 20px 85px #44617a); 
-    filter: drop-shadow(20px 20px 85px #44617a);
+    -webkit-filter: drop-shadow(0px 0px 95px #44617a); 
+    filter: drop-shadow(0px 0px 95px #44617a);
 }
