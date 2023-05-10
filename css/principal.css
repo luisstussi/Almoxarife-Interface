@@ -49,3 +49,8 @@
     color: #193045;
     margin-bottom: 15%;
 }
+
+.imgboxhome {
+    -webkit-filter: drop-shadow(20px 20px 85px #44617a); 
+    filter: drop-shadow(20px 20px 85px #44617a);
+}
