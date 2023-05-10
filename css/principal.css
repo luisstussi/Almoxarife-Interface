@@ -1,10 +1,47 @@
+.divmae {
+    background-color: #E8F1F3; 
+    height: 100vh;
+}
+.navbar {
+    padding-top: 0; 
+    height: auto; 
+    padding-bottom: 0;
+}
 .barra-navegacao {
     background-color: #006494;
+    margin-bottom: auto; 
+    position: relative; 
+    top: 0px; 
+    padding: 0px; 
+    height: 100%;
+}
+
+.divlista {
+    margin-bottom: auto;
+    margin-right: 0px;
+    margin-left: 0px;
+    float:inline-end;
+    padding-right: 0;
+}
+
+
+.listamaemenu {
+    margin-bottom: auto; 
+    margin-right: 0px;
+    margin-left: 0px; 
+    width:-moz-available; 
+    width: -webkit-fill-available; 
+    width: stretch;
 }
 
 .logoclinica {
     background-color: #13293D; 
 }
+
+.divlogo {
+    height: 100px; width: 150px;
+}
+
 
 .areadinamica {
     height: 91%
@@ -33,19 +70,13 @@
     top: -4px;
 }
 
-.conteudohome {
-    width: 20%;
-    margin-left:auto;
-    margin-right: auto;
-    margin-top:10%;
-}
-
 .textohome {
     font-size: 3em ;
     text-shadow:3px 3px 5px #44617a;
     text-align: center;
     color: #193045;
-    margin-bottom: 15%;
+    margin-top: 12%;
+    margin-bottom: 5%;
 }
 
 .imgboxhome {
