@@ -39,7 +39,11 @@
 }
 
 .divlogo {
-    height: 100px; width: 150px;
+    padding: 0;
+    margin-left: 2%;
+    margin-top: 0.5%;
+    width: 5vw;
+    height: 3vw;
 }
 
 
@@ -51,6 +55,10 @@
     margin-top: 0%;
     background-color: #13293D;
     padding: 10px;
+}
+
+.listamenu:nth-child(2) {
+    margin-top: 20%;
 }
 
 .listamenu {
@@ -82,4 +90,29 @@
 .imgboxhome {
     -webkit-filter: drop-shadow(0px 0px 95px #44617a); 
     filter: drop-shadow(0px 0px 95px #44617a);
+}
+
+.botaocascata {
+    background-color: #006494;
+    border-color:#006494;
+    color: #E8F1F3;
+}
+
+.botaocascata:hover {
+    color: #193045;
+    background-color: #006494;
+    border-color:#006494;
+}
+
+.botaocascata:ativo {
+    background-color: #006494;
+    border-color:#006494;
+}
+
+.dropdown-menu .dropdown {
+   background-color: transparent;
+}
+
+.dropdown-toggle{
+    border:0px;
 }

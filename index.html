@@ -23,7 +23,7 @@
         </button>
         <div class="divlista collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul class="listamaemenu navbar-nav me-auto mb-2 mb-lg-0 nav flex-column">
-            <li class="nav-item listamenu">
+            <li class="nav-item listamenu" style="height: 80px;">
               <a class="logoclinica navbar-brand" href="">
                 <div class="divlogo">
                   <img src="./img/Logo Estagio_branca.svg" height="100%" width="100%" style="margin-top: 5%;" class="me-3" alt="Bootstrap">
@@ -45,16 +45,20 @@
                 <img class="imagensmenu" src="./img/lista.svg" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<strong>HISTORICO</strong>
               </a>
             </li>
-            <li class="nav-item listamenu">
-              <a class="nav-link linksmenu">
+
+            <div class="dropdown" style="margin-top: 3%">
+              <button class="botaocascata btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img class="imagensmenu" src="./img/admin.svg" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<strong>ADMIN</strong>
-                <ul id="admin-collapse">
-                  <li style="list-style: none"><a href="#accordion" style="color:#E8F1F3; text-decoration: none;">ITENS</a></li>
-                  <li style="list-style: none"><a href="#orden" style="color:#E8F1F3;text-decoration: none;">ORDES</a></li>
-                  <li style="list-style: none"><a href="#ususario" style="color:#E8F1F3;text-decoration: none;">USUARIO</a></li>
-                </ul>
-              </a>
-            </li>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">ITENS</a></li>
+                <li><a class="dropdown-item" href="#">ORDENS</a></li>
+                <li><a class="dropdown-item" href="#">USUARIOS</a></li>
+              </ul>
+            </div>
+          </ul>
+          </a>
+          </li>
           </ul>
         </div>
       </div>
