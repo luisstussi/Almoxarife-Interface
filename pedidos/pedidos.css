@@ -1,0 +1,47 @@
+.badge {
+    margin-top: 1.5%;
+    color:#13293D;
+    background-color:#5CABCC;
+    font-weight: 660;
+}
+
+.containerinput {
+    display: flex;
+    justify-content: space-;
+}
+
+.btpesquisar {
+    background-color: #247BA0;
+    border: 0px;
+    font-weight: 600;
+    text-align: center;
+    height: 40px;
+}
+
+.btpesquisar:hover {
+    background-color: #006494;
+    border: 0px;
+}
+
+input {
+    text-align: center;
+    margin-right: 1%;
+    margin-left: 7%;
+    width: 14%;
+    height: 35px;
+    border-radius: 6px;
+    border-color: #000000;
+}
+
+.btsolicitar {
+    width: 130%;
+    background-color: #13293D;
+    border: 0px;
+    font-weight: 660;
+    text-align: center;
+    height: 40px;
+}
+
+.btsolicitar:hover {
+    background-color: #006494;
+}
