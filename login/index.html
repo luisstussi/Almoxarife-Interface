@@ -9,21 +9,24 @@
   </head>
   <body>
     <div class="container mt-4">
-        <div class="row align-items-center">
+        <div class="body row align-items-center">
             <div class="col-md-10 mx-auto col-lg-5">
-                <form class="p-4 p-md-5 border rounded-3" style="background-color: #006493;">
+                <form class="border rounded-3 formulario" style="background-color: #006493;">
                     <div class="img-clinica">
-                    <img src="../img/Logo Estagio_branca.svg" alt="" width="150">
+                    <img src="../img/Logo Estagio_branca.svg" alt="" style="width: 150px;">
+                    </div><br><br>
+                    <div class="usuario-login mb-3">
+                      <label for="usuario">Usuário</label>
+                      <input type="usuario" class="form-control" id="usuario" name="usuario" style="background-color: #006493;">
                     </div>
-                    <div class="form-floating mb-3">
-                        <input type="Usuário" class="form-control" id="inputUsuário" placeholder="Usuário" style="background-color: #006493;">
-                        <label for="inputUsuário" style="color: white;">Usuário</label>
+                    <div class="senha mb-3">
+                      <label for="pwd">Senha</label>
+                      <input type="password" class="form-control" id="pwd" name="pswd" style="background-color: #006493;">
                     </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Senha" style="background-color: #006493;">
-                        <label for="inputPassword" style="color: white;">Senha</label>
-                    </div>
-                    <button class="btn btn-lg" style="background-color: #00467B; color: white;" type="submit">Entrar</button>
+                  <center>
+                    <button class="botao btn btn-lg"type="submit">Entrar</button>
+                  </center
+
                 </form>
             </div>
         </div>
