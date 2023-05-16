@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <!-- Configurações da pagina -->
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +18,7 @@
 </head>
 
 <body class="container-fluid">
-<!-- Menu lateral INICIO -->
+  <!-- Menu lateral INICIO -->
   <div class="divmae row">
     <nav class="navbar col-lg-2 col-sm-12 navbar-expand-lg bg-body-tertiary ">
       <div class="barra-navegacao container-fluid">
@@ -66,34 +67,51 @@
         </div>
       </div>
     </nav>
-<!-- Menu lateral FIM -->
+    <!-- Menu lateral FIM -->
 
-<!-- Tamanho da area dinamica -->
-    <div class="areadinamica col-lg-10 col-sm-12"> 
-        <!-- Nome da Pagina -->
-        <div class="text-center">
-            <h1><span class="badge">Pedidos</span></h1>
+    <!-- Tamanho da area dinamica -->
+    <div class="areadinamica col-lg-10 col-sm-12">
+      <!-- Nome da Pagina -->
+      <div>
+        <div class="titulo">
+          <h1><span class="badge">Pedidos</span></h1>
         </div>
+
         <!-- Campo pesquisar  -->
-        <div class="containerinput">
-            <input type="text" placeholder="Nome do Produto">
-            <button type="button" class="btpesquisar btn btn-primary">Pesquisar</button>
-        <!-- Botao solicitar  -->
-            <div>
-                <button type="button" class="btsolicitar btn btn-primary">Solicitar</button>
-            </div>
-        </div>
-        <!-- Tabela  -->
-        <div class="container text-center">
-            <div class="row row-cols-4">
-              <div class="col">Nome</div>
-              <div class="col">Categoria</div>
-              <div class="col">Descrição</div>
-              <div class="col">Solicitar</div>
-            </div>
+        <div class="col-lg-10 col-sm 12">
+          <input class="float-start" type="text" placeholder="Nome do Produto">
+          <button type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
+          <!-- Botao solicitar  -->
+          <div class="solicitar float-start">
+            <button type="button" class="btsolicitar btn btn-primary">Solicitar</button>
           </div>
+        </div>
+      </div>
+      <!-- Tabela  -->
+      <br><br><br>
+      <div class="text-center col-lg-10 col-sm 12">
+        <div class="container text-center">
+          <div class="tabela">
+          <div class=" elementos row row-cols-4">
+            <div class="col">Nome</div>
+            <div class="col">Categoria</div>
+            <div class="col">Descrição</div>
+            <div class="col">Solicitar</div>
+            
+            <div class="col">Copo de Plastico</div>
+            <div class="col">Copa</div>
+            <div class="col">Copo de Plastico 250ml</div>
+            <div class="col">Solicitar</div>
+            
+            
+            
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
 
 
 </body>
+
 </html>

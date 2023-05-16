@@ -1,13 +1,15 @@
+.titulo {
+    display: flex;
+    justify-content: end;
+    margin-top: 1%;
+    margin-right: 5%;
+}
+
 .badge {
     margin-top: 1.5%;
     color:#13293D;
     background-color:#5CABCC;
     font-weight: 660;
-}
-
-.containerinput {
-    display: flex;
-    justify-content: space-;
 }
 
 .btpesquisar {
@@ -34,14 +36,30 @@ input {
 }
 
 .btsolicitar {
-    width: 130%;
+    margin-left: 7%;
+    width: 100px;
     background-color: #13293D;
     border: 0px;
     font-weight: 660;
-    text-align: center;
-    height: 40px;
+    height: 40px;  
 }
 
 .btsolicitar:hover {
     background-color: #006494;
+}
+
+.box-tabela {
+    display: flex;
+    justify-content: center;
+}
+
+.tabela {
+    background-color: #247BA0;
+    border-radius: 10px;
+    border-color: #000000;
+    opacity: 70%;
+}
+
+.elementos {
+    background-color: #E8F1F3;
 }
