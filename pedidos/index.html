@@ -76,7 +76,6 @@
         <div class="titulo">
           <h1><span class="badge">Pedidos</span></h1>
         </div>
-
         <!-- Campo pesquisar  -->
         <div class="col-lg-10 col-sm 12">
           <input class="float-start" type="text" placeholder="Nome do Produto">
@@ -89,27 +88,40 @@
       </div>
       <!-- Tabela  -->
       <br><br><br>
-      <div class="text-center col-lg-10 col-sm 12">
-        <div class="container text-center">
-          <div class="tabela">
-          <div class=" elementos row row-cols-4">
-            <div class="col">Nome</div>
-            <div class="col">Categoria</div>
-            <div class="col">Descrição</div>
-            <div class="col">Solicitar</div>
-            
-            <div class="col">Copo de Plastico</div>
-            <div class="col">Copa</div>
-            <div class="col">Copo de Plastico 250ml</div>
-            <div class="col">Solicitar</div>
-            
-            
-            
+      <div class="container text-center col-lg-10 col-sm 12">
+        <div class="text-center">
+          <div class="tabela contorno row row-cols-4">
+             <!-- Cabeçalho da tabela  -->
+             <div class="nome elementoinicial col"><b>Nome</b></div>
+             <div class="dropdown elemento col">
+              <button class=" botaocascata2 btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <b>Categoria</b>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Banheiro</a></li>
+                <li><a class="dropdown-item" href="#">Copa</a></li>
+                <li><a class="dropdown-item" href="#">Escritorio</a></li>
+                <li><a class="dropdown-item" href="#">Laboratorio</a></li>
+                <li><a class="dropdown-item" href="#">Manutencao</a></li>
+              </ul>
+            </div>
+             <div class="nome elemento col"><b>Descrição</b></div>
+             <div class="nome elementofinal col"><b>Solicitar</b></div>
+            <!-- Elementos que se repetem  -->
+            <div class="elementoinicial col">Copo de Plastico</div>
+            <div class="elemento col">Copa</div>
+            <div class="elemento col">Copo de Plastico 250ml</div>
+            <div class="caixa form-check elementofinal col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input class="inputcaixa form-check-input float-none" type="checkbox" value="" id="flexCheckChecked" checked>
+              <label class="form-check-label" for="flexCheckChecked">
+              </label>
+            </div>
+              
           </div>
-        </div>
         </div>
       </div>
     </div>
+  </div>
 
 
 </body>

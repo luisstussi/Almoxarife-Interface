@@ -53,13 +53,75 @@ input {
     justify-content: center;
 }
 
-.tabela {
-    background-color: #247BA0;
-    border-radius: 10px;
-    border-color: #000000;
-    opacity: 70%;
+.contorno {
+    border: 2px solid;
+    border-color: black;
+    border-radius:10px;
 }
 
-.elementos {
+.tabela {
+    background-color: #79adc4;
+    border-radius: 10px;
+}
+.elementoinicial {
+    border: 9px solid;
+    border-radius: 10px 0px 0px 10px;
+    border-right: 0px;
+    border-color: #79adc4;
     background-color: #E8F1F3;
+}
+
+.elementofinal {
+    border: 9px solid;
+    border-radius: 0px 10px 10px 0px;
+    border-left: 0px;
+    border-color: #79adc4;
+    background-color: #E8F1F3;
+}
+
+.elemento {
+    border: 9px solid;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: #79adc4;
+    background-color: #E8F1F3;
+}
+
+.caixa {
+    margin: 0px;
+}
+
+.inputcaixa {
+    font-size:x-large;
+    margin:3px;
+}
+
+.botaocascata2 {
+    background-color: #E8F1F3;
+    border-color:#E8F1F3;
+    color: #000000;
+}
+
+.botaocascata2:hover {
+    color: #193045;
+    background-color: #E8F1F3;
+    border-color:#E8F1F3;
+}
+
+.botaocascata2:ativo {
+    background-color: #E8F1F3;
+    border-color:#E8F1F3;
+}
+
+.dropdown-menu .dropdown {
+   background-color: transparent;
+}
+
+.dropdown-toggle{
+    border:0px;
+}
+ 
+.nome {
+    align-self: center;
+    padding: 6px;
 }
