@@ -125,3 +125,8 @@ input {
     align-self: center;
     padding: 6px;
 }
+
+.form-check-input:checked {
+    background-color: #13293D;
+    border-color: #13293D;
+}
