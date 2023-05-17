@@ -22,13 +22,24 @@
     box-shadow: none;
 
 }
+.form-control{
+    border-left: none;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0;
+    border-color: #cccccc;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+}
 .senha {
     color: white;
     margin-top: 50px;
     transform: translateY(-300%);
 }
 .botao {
-    background-color: #00467B;
+    background-color: #13293D;
     color: white;
     margin-top: -300px;
     padding-left: 100px;
