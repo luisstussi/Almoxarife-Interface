@@ -20,11 +20,11 @@
 
 <!-- The Modal -->
 <div class="modal fade" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
+  <div class="modal-dialog modal-fullscreen-sm-down">
+    <div class="modal-content col-md-6 col-sm-12">
 
       <!-- Modal Header -->
-      <div class="modal-header">
+      <div class="modal-header border-solicitacao">
         <h4 class="modal-title">Solicitações de Produtos</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
@@ -32,14 +32,17 @@
       <!-- Modal body -->
     <div class=" row modal-body">
     
-        <div class="justificativa col-6">Justificativa</div>
-        <div class="resumo col-6"> Resumo do Pedido </div>
-        <div class="insirir col-sm-6 border-gustavo">
-            <input value="Insira sua justificativa aqui..." for="pwd" type="justificativa" class="form-control" id="pwd" name="pwd">
-            
+        <div class="justificativa col-md-6 col-sm-12">Justificativa<br>
+          <div class="inserir col-md-6 col-sm-12 border-gustavo">
+            <div class="form-group">
+
+              <textarea class="form-control" rows="5" id="comment" placeholder="Insira sua Justificativa aqui..." style="background-color: #E8F1F3;"></textarea>
+            </div>
         </div>
-        <div class="col-sm-6">
-            <table class="table table-borderless">
+        </div>
+        <div class="col-md-6 col-sm-12"> Resumo do Pedido<br>
+          <div class="resumo col-md-6 col-sm-12">
+            <table class="table table-borderless border-gustavo">
                 <thead>
                     <th>
                         Nome
@@ -50,22 +53,25 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>
+                        <td style="padding-top: 0%;">
                             copo plastico
                         </td>
-                        <td>
+                        <td style="padding-top: 0%">
                             copa
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        </div>
+        
     </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
+                <div class="pedido">Nº pedido:001</div>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn" data-bs-dismiss="modal" style="color: #13293D;">Solicitar</button>
+        <button  style="background-color: #13293D; color: white;" type="button" class="btn" data-bs-dismiss="modal">Solicitar</button>
       </div>
 
     </div>

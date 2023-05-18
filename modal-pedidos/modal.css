@@ -1,20 +1,56 @@
+.border-solicitacao{
+    border-bottom: solid #006493;
+    border-width: 2px;
+}
 .modal-content{
     width: 60vw;
-    height: 80vh;
     transform: translate(-20%,0%);
+    border-color: #006493;
+    background-color: #E8F1F3;
 }
-
+.inserir{
+    width: 100%;
+    height: 80%;
+    background-color: #E8F1F3;
+    
+}
+.resumo{
+    width: auto;
+    height: 80px;
+}
 .modal-body{
-    border-color: aqua;
+    border-color: #006493;
 }
 .justificativa{
     padding-left: 20px;
 }
 .border-gustavo{
-    border: solid aqua;
+    border: solid #006493;
     border-width: 1px;
-    padding-bottom: 100px;
+    
 }
 .form-control{
     border-width: 0;
+    background-color: #E8F1F3;
+}
+.modal-footer{
+    border-top-color: #006493;
+    border-width: 2px;
+    
+}
+.pedido{
+    margin-right: auto;
+    padding-left: 10px;
+    height: 30px;
+    width: 120px;
+    border-radius: 1px;
+    background-color: white;
+}
+@media(max-width: 768px){
+    .modal-content{
+        width: 100vw;
+        transform: translate(0%,0%);
+        border-color: #006493;
+        background-color: #E8F1F3;
+    }
 }
