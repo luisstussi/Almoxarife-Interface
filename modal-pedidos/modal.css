@@ -1,3 +1,136 @@
+.titulo {
+    display: flex;
+    justify-content: end;
+    margin-top: 1%;
+    margin-right: 5%;
+}
+
+.badge {
+    margin-top: 1.5%;
+    color:#13293D;
+    background-color:#5CABCC;
+    font-weight: 660;
+}
+
+.btpesquisar {
+    background-color: #247BA0;
+    border: 0px;
+    font-weight: 600;
+    text-align: center;
+    height: 40px;
+}
+
+.btpesquisar:hover {
+    background-color: #006494;
+    border: 0px;
+}
+
+input {
+    text-align: center;
+    margin-right: 1%;
+    margin-left: 7%;
+    width: 14%;
+    height: 35px;
+    border-radius: 6px;
+    border-color: #000000;
+}
+
+.btsolicitar {
+    margin-left: 7%;
+    width: 100px;
+    background-color: #13293D;
+    border: 0px;
+    font-weight: 660;
+    height: 40px;  
+}
+
+.btsolicitar:hover {
+    background-color: #006494;
+}
+
+.box-tabela {
+    display: flex;
+    justify-content: center;
+}
+
+.contorno {
+    border: 2px solid;
+    border-color: black;
+    border-radius:10px;
+}
+
+.tabela {
+    background-color: #79adc4;
+    border-radius: 10px;
+}
+.elementoinicial {
+    border: 9px solid;
+    border-radius: 10px 0px 0px 10px;
+    border-right: 0px;
+    border-color: #79adc4;
+    background-color: #E8F1F3;
+}
+
+.elementofinal {
+    border: 9px solid;
+    border-radius: 0px 10px 10px 0px;
+    border-left: 0px;
+    border-color: #79adc4;
+    background-color: #E8F1F3;
+}
+
+.elemento {
+    border: 9px solid;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: #79adc4;
+    background-color: #E8F1F3;
+}
+
+.caixa {
+    margin: 0px;
+}
+
+.inputcaixa {
+    font-size:x-large;
+    margin:3px;
+}
+
+.botaocascata2 {
+    background-color: #E8F1F3;
+    border-color:#E8F1F3;
+    color: #000000;
+}
+
+.botaocascata2:hover {
+    color: #193045;
+    background-color: #E8F1F3;
+    border-color:#E8F1F3;
+}
+
+.botaocascata2:ativo {
+    background-color: #E8F1F3;
+    border-color:#E8F1F3;
+}
+
+.dropdown-menu .dropdown {
+   background-color: transparent;
+}
+
+.dropdown-toggle{
+    border:0px;
+}
+ 
+.nome {
+    align-self: center;
+    padding: 6px;
+}
+
+.form-check-input:checked {
+    background-color: #13293D;
+    border-color: #13293D;
+}
+
 .border-solicitacao{
     border-bottom: solid #006493;
     border-width: 2px;
