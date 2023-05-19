@@ -103,6 +103,9 @@ input {
     margin:3px;
 }
 
+.email{
+    word-wrap: break-word;
+}
 .botaocascata2:hover {
     color: #193045;
     background-color: #E8F1F3;

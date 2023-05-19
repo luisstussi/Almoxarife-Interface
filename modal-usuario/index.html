@@ -7,14 +7,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedidos Clinicas Golden</title>
+  <title>Usuarios</title>
   <script src="../assets/js/color-modes.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cheatsheet/">
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/principal.css">
-  <link rel="stylesheet" href="./pedidos.css">
+  <link rel="stylesheet" href="./modal-usuario.css">
 </head>
 
 <body class="container-fluid">
@@ -68,55 +68,44 @@
       </div>
     </nav>
     <!-- Menu lateral FIM -->
+        <!-- Tamanho da area dinamica -->
+        <div class="areadinamica col-lg-10 col-sm-12">
+            <!-- Nome da Pagina -->
+            <div>
+              <div class="titulo">
+                <h1><span class="badge">Usuario</span></h1>
+              </div>
+              <!-- Campo pesquisar  -->
+              <div class="col-lg-10 col-sm 12">
+                <input class="float-start" type="text" placeholder="Nome do Usuario">
+                <button type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
+                <!-- Botao solicitar  -->
+                <div class="criar float-start">
+                  <button type="button" class="btcriar btn btn-primary">Criar</button>
+                </div>
+              </div>
+            </div>
+            <!-- Tabela  -->
+            <br><br><br>
+            <div class="container text-center col-lg-10 col-sm 12">
+              <div class="text-center">
+                <div class="tabela contorno row row-cols-3">
+                   <!-- Cabeçalho da tabela  -->
+                   <div class="nome elementoinicial col"><b>Nome</b></div>
+                   <div class="dropdown elemento col">
+                      <b>Email</b>
+                    </button>
+                  </div>
+                   <div class="nome elementofinal col"><b>Solicitar</b></div>
+                  <!-- Elementos que se repetem  -->
+                  <div class="elemento col">Luis Henrique alvez de Souza</div>
+                  <div class="elemento col">luishenriquealvezdesouza@gmail.com</div>
+                  <div class="caixa form-check elementofinal col">
+                    <button class="engrenagem"><img src="../img/engrenagem.png" alt="" style="width: 30px;"></button>
+                  </div>
 
-    <!-- Tamanho da area dinamica -->
-    <div class="areadinamica col-lg-10 col-sm-12">
-      <!-- Nome da Pagina -->
-      <div>
-        <div class="titulo">
-          <h1><span class="badge">Pedidos</span></h1>
-        </div>
-        <!-- Campo pesquisar  -->
-        <div class="col-lg-10 col-sm 12">
-          <input class="float-start" type="text" placeholder="Nome do Produto">
-          <button type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
-          <!-- Botao solicitar  -->
-          <div class="solicitar float-start">
-            <button type="button" class="btsolicitar btn btn-primary">Solicitar</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Tabela  -->
-      <br><br><br>
-      <div class="container text-center col-lg-10 col-sm 12">
-        <div class="text-center">
-          <div class="tabela contorno row row-cols-4">
-             <!-- Cabeçalho da tabela  -->
-             <div class="nome elementoinicial col"><b>Nome</b></div>
-             <div class="dropdown elemento col">
-              <button class=" botaocascata2 btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <b>Categoria</b>
-              </button>
-            </div>
-             <div class="nome elemento col"><b>Descrição</b></div>
-             <div class="nome elementofinal col"><b>Solicitar</b></div>
-            <!-- Elementos que se repetem  -->
-            <div class="elementoinicial col">Copo de Plastico</div>
-            <div class="elemento col">Copa</div>
-            <div class="elemento col">Copo de Plastico 250ml</div>
-            <div class="caixa form-check elementofinal col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input class="inputcaixa form-check-input float-none" type="checkbox" value="" id="flexCheckChecked" checked>
-              <label class="form-check-label" for="flexCheckChecked">
-              </label>
-            </div>
-              
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-</body>
-
-</html>
