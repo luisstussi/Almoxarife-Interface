@@ -172,9 +172,9 @@ input {
     
 }
 .nome{
-    margin-right: 380px;
-    padding-right: 200px;
     background-color: white;
+    margin-right: 580px;
+    margin-block: 10;
 }
 @media(max-width: 768px){
     .modal-content{
