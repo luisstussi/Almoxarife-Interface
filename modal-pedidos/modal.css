@@ -59,10 +59,6 @@ input {
     border-radius:10px;
 }
 
-.tabela {
-    background-color: #79adc4;
-    border-radius: 10px;
-}
 .elementoinicial {
     border: 9px solid;
     border-radius: 10px 0px 0px 10px;
@@ -149,8 +145,15 @@ input {
 }
 .resumo{
     width: auto;
-    height: 80px;
+    overflow:scroll;
+    grid-template-columns: 100%;
+    row-gap: 20px;
 }
+
+.tabela{
+    min-height: 17vw;
+}
+
 .modal-body{
     border-color: #006493;
 }
@@ -165,6 +168,7 @@ input {
 .form-control{
     border-width: 0;
     background-color: #E8F1F3;
+    padding-bottom: 100px;
 }
 .modal-footer{
     border-top-color: #006493;
@@ -179,6 +183,7 @@ input {
     border-radius: 1px;
     background-color: white;
 }
+
 @media(max-width: 768px){
     .modal-content{
         width: 100vw;
