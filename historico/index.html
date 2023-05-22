@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- Configurações da pagina -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos Clinicas Golden</title>
+    <script src="../assets/js/color-modes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cheatsheet/">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="./historico.css">
+</head>
+
+<body class="container-fluid">
+    <!-- Menu lateral INICIO -->
+    <div class="divmae row">
+        <nav class="navbar col-lg-2 col-sm-12 navbar-expand-lg bg-body-tertiary ">
+            <div class="barra-navegacao container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="divlista collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="listamaemenu navbar-nav me-auto mb-2 mb-lg-0 nav flex-column">
+                        <li class="nav-item listamenu" style="height: 80px;">
+                            <a class="logoclinica navbar-brand" href="">
+                                <div class="divlogo">
+                                    <img src="../img/Logo Estagio_branca.svg" height="100%" width="100%" style="margin-top: 5%;" class="me-3" alt="Bootstrap">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item listamenu">
+                            <a href="./" class="nav-link linksmenu">
+                                <img class="imagensmenu" src="../img/home.svg" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<strong>INICIAL</strong>
+                            </a>
+                        </li>
+                        <li class="nav-item listamenu">
+                            <a href="./pedidos" class="nav-link linksmenu">
+                                <img class="imagensmenu" src="../img/caixa-menu.svg" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<strong>PEDIDOS</strong>
+                            </a>
+                        </li>
+                        <li class="nav-item listamenu">
+                            <a href="./historico" class="nav-link linksmenu">
+                                <img class="imagensmenu" src="../img/lista.svg" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<strong>HISTORICO</strong>
+                            </a>
+                        </li>
+
+                        <div class="dropdown" style="margin-top: 3%">
+                            <button class="botaocascata btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class="imagensmenu" src="../img/admin.svg" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<strong>ADMIN</strong>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../itens">ITENS</a></li>
+                                <li><a class="dropdown-item" href="../ordens">ORDENS</a></li>
+                                <li><a class="dropdown-item" href="../usuarios">USUARIOS</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                    </a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Menu lateral FIM -->
+
+        <!-- Tamanho da area dinamica -->
+        <div class="areadinamica col-lg-10 col-sm-12">
+            <!-- Nome da Pagina -->
+            <div>
+                <div class="titulo">
+                    <h1><span class="titulo2 badge">Histórico</span></h1>
+                </div>
+                <!-- Campo pesquisar  -->
+                <div class="col-lg-10 col-sm 12">
+                    <input class="float-start" type="text" placeholder="Nº do Pedido">
+                    <button type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
+                    <!-- Botao solicitar  -->
+                </div>
+            </div>
+            <!-- Tabela  -->
+            <br><br><br>
+        
+            <div class="scroll-bg container text-center col-lg-10 col-sm 12">
+                <div class="scroll-div text-center">
+                    <div class="scroll-object tabela contorno row row-cols-3">
+                        <!-- Cabeçalho da tabela  -->
+                        <div class="nome elementonpedido col"><b>Nº do Pedido</b></div>
+                        <div class="nome elementojust col"><b>Justificativa</b></div>
+                        <div class="dropdown elementostatus col">
+                            <button class=" botaocascata2 btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <b>Status</b>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-center" href="#">Aprovados</a></li>
+                                <li><a class="dropdown-item text-center" href="#">Pendentes</a></li>
+                                <li><a class="dropdown-item text-center" href="#">Negados</a></li>
+                            </ul>
+                        </div>
+                        <!-- Elementos que se repetem  -->
+                        <div class="elementoinicial col">001</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>
+
+                        <div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="negados"><b>Negado</b></span> </div>
+
+                        <div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="pendentes"><b>Pendente</b></span>
+                            <button class="btpendentes float-none" type="button"><img src="./img/editar.svg" alt=""></button>
+                            <button class="btpendentes float-none" type="button"><img src="./img/excluir.svg" alt=""></button>                      
+                        </div>
+
+
+
+                        <div class="elementoinicial col">001</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>
+                        <div class="elementoinicial col">001</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>
+                        <div class="elementoinicial col">001</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>
+                        <div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="negados"><b>Negado</b></span> </div>
+                        <div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="negados"><b>Negado</b></span> </div>
+                        <div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="negados"><b>Negado</b></span> </div>
+                        <div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="negados"><b>Negado</b></span> </div>
+                        <div class="elementoinicial col">001</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>
+                        <div class="elementoinicial col">001</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>
+                        <div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="pendentes"><b>Pendente</b></span>
+                            <button class="btpendentes float-none" type="button"><img src="./img/editar.svg" alt=""></button>
+                            <button class="btpendentes float-none" type="button"><img src="./img/excluir.svg" alt=""></button>                      
+                        </div><div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="pendentes"><b>Pendente</b></span>
+                            <button class="btpendentes float-none" type="button"><img src="./img/editar.svg" alt=""></button>
+                            <button class="btpendentes float-none" type="button"><img src="./img/excluir.svg" alt=""></button>                      
+                        </div>
+                        <div class="elementoinicial col">001</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>
+                        <div class="elementoinicial col">001</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>
+                        <div class="elementoinicial col">001</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>
+                        <div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="negados"><b>Negado</b></span> </div>
+                        <div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="negados"><b>Negado</b></span> </div>
+                        <div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="negados"><b>Negado</b></span> </div>
+                        <div class="elementoinicial col">002</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="negados"><b>Negado</b></span> </div>
+                        <div class="elementoinicial col">001</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>
+                        <div class="elementoinicial col">001</div>
+                        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
+                        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>
+                        
+
+
+   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
