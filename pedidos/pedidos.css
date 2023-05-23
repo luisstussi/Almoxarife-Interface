@@ -53,12 +53,6 @@ input {
     justify-content: center;
 }
 
-.contorno {
-    border: 2px solid;
-    border-color: black;
-    border-radius:10px;
-}
-
 .tabela {
     background-color: #79adc4;
     border-radius: 10px;
@@ -129,4 +123,18 @@ input {
 .form-check-input:checked {
     background-color: #13293D;
     border-color: #13293D;
+}
+
+.scroll-bg {
+    height: 80%;
+    border: solid;
+    border-radius: 7px;
+    background-color: #79adc4;
+}
+
+.scroll-div {
+    border: 0px;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 100%;
 }
