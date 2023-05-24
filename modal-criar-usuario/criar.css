@@ -68,7 +68,9 @@
     border-width: 2px;
     
 }
-
+.modal{
+    backdrop-filter: 4px;
+}
 @media(max-width: 768px){
     .modal-content{
         width: 100vw;
