@@ -15,6 +15,7 @@
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/principal.css">
   <link rel="stylesheet" href="./ordens.css">
+  <link rel="stylesheet" href="./ordens-modal.css">
 </head>
 
 <body class="container-fluid">
@@ -94,17 +95,56 @@
             <!-- Elementos que se repetem  -->
             <div class="elementoinicial col">001</div>
             <div class="elemento col">Luiz inácio lula da silva</div>
-            <div class="elementofinal col"> <button class="exibir"><b>Exibir</b></button></div>
+            <div class="elementofinal col"> <button class="exibir" data-bs-toggle="modal" data-bs-target="#myModal"><b>Exibir</b></button></div>
             </div>              
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
-
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-fullscreen-sm-down">
+      <div class="modal-content col-md-6 col-sm-12">
+  
+        <!-- Modal Header -->
+        <div class="modal-header border-solicitacao">
+          <h4 class="modal-title">Edição de Pedidos</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+      <div class=" row modal-body">
+      
+          <div class="justificativa col-md-6 col-sm-12">ITENS<br>
+            <div class="inserir col-md-6 col-sm-12 border-gustavo">
+              <div class="itens form-group">
+              ITENS<br>
+              PAPEL<br>
+              Caneta<br>
+              Copo descartavel
+  
+              </div>
+          </div>
+          </div>
+          <div class="col-md-6 col-sm-12"> JUSTIFICATIVA<br>
+              <div class="inserir col-md-6 col-sm-12 border-gustavo">
+              SOLICITAÇÃO DE ITENS
+          </div>
+      </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #13293D; color: white;">Cancelar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Rejeitar</button>
+          <button style="background-color: #115a9e; color: white;" type="button" class="btn" data-bs-dismiss="modal">Salvar</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  
 </body>
 
 </html>
