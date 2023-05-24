@@ -68,44 +68,136 @@
       </div>
     </nav>
     <!-- Menu lateral FIM -->
-        <!-- Tamanho da area dinamica -->
-        <div class="areadinamica col-lg-10 col-sm-12">
-            <!-- Nome da Pagina -->
-            <div>
-              <div class="titulo">
-                <h1><span class="badge">Usuario</span></h1>
-              </div>
-              <!-- Campo pesquisar  -->
-              <div class="col-lg-10 col-sm 12">
-                <input class="float-start" type="text" placeholder="Nome do Usuario">
-                <button type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
-                <!-- Botao solicitar  -->
-                <div class="criar float-start">
-                  <button type="button" class="btcriar btn btn-primary">Criar</button>
-                </div>
-              </div>
-            </div>
-            <!-- Tabela  -->
-            <br><br><br>
-            <div class="scroll-bg container text-center col-lg-10 col-sm 12">
-              <div class="scroll-div text-center">
-                <div class="scroll-object tabela contorno row row-cols-3">
-                   <!-- Cabeçalho da tabela  -->
-                   <div class="nome elementoinicial col"><b>Nome</b></div>
-                   <div class="dropdown elemento col">
-                      <b>Email</b>
-                    </button>
-                  </div>
-                   <div class="nome elementofinal col"><b>Solicitar</b></div>
-                  <!-- Elementos que se repetem  -->
-                  <div class="elementoinicial col">Luis Henrique alvez de Souza</div>
-                  <div class="elemento col email">luishenriquealvezdesouza@gmail.com</div>
-                  <div class="caixa form-check elementofinal col">
-                    <button class="engrenagem"><img src="./img/engrenagem.png" alt="" style="width: 25px;"></button>
-                  </div>
-                    
-                </div>
-              </div>
-            </div>
+    <!-- Tamanho da area dinamica -->
+    <div class="areadinamica col-lg-10 col-sm-12">
+      <!-- Nome da Pagina -->
+      <div>
+        <div class="titulo">
+          <h1><span class="badge">Usuario</span></h1>
+        </div>
+        <!-- Campo pesquisar  -->
+        <div class="col-lg-10 col-sm 12">
+          <input class="float-start" type="text" placeholder="Nome do Usuario">
+          <button type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
+          <!-- Botao solicitar  -->
+          <div class="criar float-start">
+            <button type="button" class="btcriar btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Criar</button>
           </div>
         </div>
+      </div>
+      <!-- Tabela  -->
+      <br><br><br>
+      <div class="scroll-bg container text-center col-lg-10 col-sm 12">
+        <div class="scroll-div text-center">
+          <div class="scroll-object tabela contorno row row-cols-3">
+            <!-- Cabeçalho da tabela  -->
+            <div class="nome elementoinicial col"><b>Nome</b></div>
+            <div class="dropdown elemento col">
+              <b>Email</b>
+              </button>
+            </div>
+            <div class="nome elementofinal col"><b>Solicitar</b></div>
+            <!-- Elementos que se repetem  -->
+            <div class="elementoinicial col">Luis Henrique alvez de Souza</div>
+            <div class="elemento col email">luishenriquealvezdesouza@gmail.com</div>
+            <div class="caixa form-check elementofinal col">
+              <button class="engrenagem" data-bs-toggle="modal" data-bs-target="#myModal"><img src="./img/engrenagem.png" alt="" style="width: 25px;"></button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal editar -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-fullscreen-sm-down">
+      <div class="modal-content col-md-6 col-sm-12">
+        <!-- Modal Header -->
+        <div class="modal-header border-solicitacao">
+          <h4 class="modal-title">Opções</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Modal body -->
+        <div style="padding-left: 14px;">Nome:</div>
+        <div class="nome">
+          Luis Henrique Alvez de Souza
+          <div class="pencil float-end">
+            <button class="botao-img">
+              <img src="../img/pencil.png" alt="" style="width: 20px;">
+            </button>
+          </div>
+        </div>
+        <div style="padding-left: 14px;">Email:</div>
+        <div class="nome">
+          luishenriquealvezdesouza@gmail.com
+          <div class="pencil float-end">
+            <button class="botao-img">
+              <img src="../img/pencil.png" alt="" style="width: 20px;">
+            </button>
+          </div>
+        </div>
+        <div style="padding-left: 14px;">CPF:</div>
+        <div class="nome">
+          012.345.678-90
+          <div class="pencil float-end">
+            <button class="botao-img">
+              <img src="../img/pencil.png" alt="" style="width: 20px;">
+            </button>
+          </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <div class="float-start">
+            <button type="button" class="botao-excluir btn" data-bs-dismiss="modal">Excluir Usuario</button>
+          </div>
+          <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #13293D; color: white;">Cancelar</button>
+          <button style="background-color: #1162ad; color: white;" type="button" class="btn" data-bs-dismiss="modal">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal criar-->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-fullscreen-sm-down">
+      <div class="modal-content col-md-6 col-sm-12">
+        <!-- Modal Header -->
+        <div class="modal-header border-solicitacao">
+          <h4 class="modal-title">Opções</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Modal body -->
+        <div style="padding-left: 14px;">Nome:</div>
+        <div class="nome">
+          Luis Henrique Alvez de Souza
+        </div>
+        <div style="padding-left: 14px;">Email:</div>
+        <div class="nome">
+          luishenriquealvezdesouza@gmail.com
+        </div>
+        <div style="padding-left: 14px;">Senha:</div>
+        <div class="nome">
+          1234567890
+        </div>
+        <div style="padding-left: 14px;">CPF:</div>
+        <div class="nome">
+          012.345.678-90
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <div class="float-start">
+          </div>
+          <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #13293D; color: white;">Cancelar</button>
+          <button style="background-color: #1162ad; color: white;" type="button" class="btn" data-bs-dismiss="modal">Criar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
