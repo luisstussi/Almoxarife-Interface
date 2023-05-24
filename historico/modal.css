@@ -53,12 +53,6 @@ input {
     justify-content: center;
 }
 
-.contorno {
-    border: 2px solid;
-    border-color: black;
-    border-radius:10px;
-}
-
 .elementoinicial {
     border: 9px solid;
     border-radius: 10px 0px 0px 10px;
@@ -145,11 +139,9 @@ input {
 }
 .resumo{
     width: auto;
-    overflow:scroll;
     grid-template-columns: 100%;
     row-gap: 20px;
 }
-
 .tabela2{
     min-height: 17vw;
 }
@@ -191,4 +183,19 @@ input {
         border-color: #006493;
         background-color: #E8F1F3;
     }
+}
+
+.modal {
+    backdrop-filter: blur(4px);
+}
+.scroll-bg2 {
+    height: 80%;
+    border: none;
+    background-color: #E8F1F3;
+}
+
+.scroll-div2 {
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 100%;
 }

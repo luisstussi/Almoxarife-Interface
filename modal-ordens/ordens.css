@@ -199,3 +199,6 @@ input {
         background-color: #E8F1F3;
     }
 }
+.modal {
+    backdrop-filter: blur(4px);
+}

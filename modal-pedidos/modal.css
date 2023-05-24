@@ -131,6 +131,9 @@ input {
     border-bottom: solid #006493;
     border-width: 2px;
 }
+.modal {
+    backdrop-filter: blur(4px);
+}
 .modal-content{
     width: 60vw;
     transform: translate(-20%,0%);
