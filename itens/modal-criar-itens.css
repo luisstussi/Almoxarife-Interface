@@ -1,0 +1,22 @@
+.modal-body{
+    padding-left: 50px;
+}
+.div-inserir{
+    background-color: #eff9fc;
+    border: 1px solid #1949e7;
+    margin-right: 80px;
+}
+.div-copa{
+    border: 1px solid #1949e7;
+}
+
+.div-descricao{
+    border: 1px solid #1949e7;
+    margin-right: 80px;
+}
+
+.div-quantidade{
+    border: 1px solid #1949e7;
+    padding-left: 120px;
+    padding-right: 70px;
+}

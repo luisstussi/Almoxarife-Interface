@@ -15,6 +15,7 @@
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/principal.css">
   <link rel="stylesheet" href="./itens.css">
+  <link rel="stylesheet" href="./modal-criar-itens.css"
 </head>
 
 <body class="container-fluid">
@@ -82,10 +83,10 @@
           <button type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
           <!-- Botao solicitar  -->
           <div class="solicitar float-start">
-            <button type="button" class="btsolicitar2 btn btn-primary">Criar</button>
+            <button type="button" class="btsolicitar2 btn btn-primary " data-bs-toggle="modal" data-bs-target="#myModal">Criar</button>
           </div>
           <div class="solicitar float-start">
-            <button type="button" class="btsolicitar btn btn-primary">Pesquisar</button>
+            <button type="button" class="btsolicitar btn btn-primary">Deletar</button>
           </div>
         </div>
       </div>
@@ -124,7 +125,66 @@
       </div>
     </div>
   </div>
-
+    <!-- The Modal -->
+    <div class="modal fade modal-lg" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header" style="border-color: #1162ad;">
+            <h4 class="modal-title">Criação de Itens</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-6" style="margin-right: 70px;">
+                Nome:
+              </div>
+              <div class="col-sm-4">
+                Categoria:
+              </div>
+              <div class=" col-sm-6 div-inserir">
+                Insira o nome do item
+              </div>
+              <div class="col-sm-4 div-copa">
+                <div class="dropdown" style="margin-top: 3%">
+                  <button class="botaocascata btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <strong>categoria</strong>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item">ITENS</li>
+                    <li class="dropdown-item">ORDENS</li>
+                    <li class="dropdown-item">USUARIOS</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-6" style="margin-right: 70px;">
+                Descrição:
+              </div>
+              <div class="col-sm-4">
+                Quantidade:
+              </div>
+              <div class="col-sm-6 div-descricao">
+                Insira a descrição do item
+              </div>
+              <div class="col-sm-4 div-quantidade">
+                10
+              </div>
+            </div>
+          </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer" style="border-color: #1162ad;">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #0e518f; color: white;">Criar</button>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+    
 
 
 
