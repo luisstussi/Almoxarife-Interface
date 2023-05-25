@@ -193,3 +193,8 @@ input {
 .n1 {
     color: #E8F1F3;
 }
+
+.border-gustavo {
+    border: solid black;
+    border-width: 1px;
+}
