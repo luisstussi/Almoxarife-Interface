@@ -2,21 +2,24 @@
     padding-left: 50px;
 }
 .div-inserir{
-    background-color: #eff9fc;
-    border: 1px solid #1949e7;
+    border: 1px solid #000000;
     margin-right: 80px;
+    height: 40px;
 }
 .div-copa{
-    border: 1px solid #1949e7;
+    border: 1px solid #000000;
+    padding-left: 70px;
 }
 
 .div-descricao{
-    border: 1px solid #1949e7;
+    border: 1px solid #000000;
     margin-right: 80px;
+    height: 100px;
 }
 
 .div-quantidade{
-    border: 1px solid #1949e7;
+    border: 1px solid #000000;
     padding-left: 120px;
     padding-right: 70px;
+    height: 30px;
 }

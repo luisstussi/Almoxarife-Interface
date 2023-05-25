@@ -198,5 +198,7 @@ input {
     border: solid black;
     border-width: 1px;
     width: auto;
-    height: 100px;
+    height: 200px;
+    background-color: #eff9fc;
+
 }
