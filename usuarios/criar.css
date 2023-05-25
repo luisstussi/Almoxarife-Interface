@@ -1,12 +1,5 @@
-.titulo {
-    display: flex;
-    justify-content: end;
-    margin-top: 1%;
-    margin-right: 5%;
-}
 
-
-.nome {
+.nome3{
     display: inline-block;
     margin: 20px;
     background-color: #eff9fc;
