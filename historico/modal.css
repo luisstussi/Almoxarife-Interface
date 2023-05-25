@@ -133,10 +133,11 @@ input {
 }
 .inserir{
     width: 100%;
-    height: 80%;
+    height: 89%;
     background-color: #E8F1F3;
     
 }
+
 .resumo{
     width: auto;
     grid-template-columns: 100%;
