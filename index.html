@@ -12,6 +12,28 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cheatsheet/">
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/principal.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+      //http://192.168.32.175:5500/login/
+        axios.get({
+            //baseURL: 'https://050f-200-199-220-74.ngrok.io',
+            baseURL: "http://192.168.32.175:3000/logtest",
+            headers: {
+                'Authorization': `Bearer ${userToken}`,
+                'Accept' : 'application/json',
+                'Content-Type': 'application/json'
+            }    
+        })
+        .then(function (res) { console.log(res); return res.json(); })
+        .then(function (data) {
+          localStorage.setItem('token', data.token);
+          console.log(data);
+          console.log("autenticado");
+          //window.location.href = "../"
+          //setTimeout(() => {},5000)
+        });
+
+  </script>
 </head>
 
 <body class="container-fluid">
