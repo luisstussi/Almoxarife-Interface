@@ -15,7 +15,9 @@
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/principal.css">
     <link rel="stylesheet" href="./historico.css">
-    <link rel="stylesheet" href="./modal.css">
+    <link rel="stylesheet" href="./modal.css">   
+    <script src="../scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body class="container-fluid">
@@ -79,14 +81,40 @@
                 </div>
                 <!-- Campo pesquisar  -->
                 <div class="col-lg-10 col-sm 12">
-                    <input class="float-start" type="text" placeholder="Nº do Pedido">
-                    <button type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
+                    <input id="barra-pesquisa" class="float-start" type="text" placeholder="Nº do Pedido">
+
+                    <!--<script>
+                        function listarordens() {
+                            var pesquisa = document.getElementById("barra-pesquisa")
+                            console.log(localStorage.getItem('token'))
+                            axios.get( `/ordem`, {
+                               
+                                baseURL: dominio_back(),
+                                headers: {
+                                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                                    'Accept': 'application/json',
+                                    'Content-Type': 'application/json'
+                                },
+                                data:  JSON.stringify({ id: pesquisa.value })
+                            })
+                                .then(function (res) { console.log(res.data); return res.data })
+                                .then(function (data) {
+                                    console.log(data);
+                                })
+                                .catch((res) => {
+                                    //window.location.href = "./login"
+                                    console.log("Erro")
+                                });
+                        }
+                    </script>-->
+
+                    <button onclick="listarordens()" type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
                     <!-- Botao solicitar  -->
                 </div>
             </div>
             <!-- Tabela  -->
             <br><br><br>
-        
+
             <div class="scroll-bg container text-center col-lg-10 col-sm 12">
                 <div class="scroll-div text-center">
                     <div class="scroll-object tabela contorno row row-cols-3">
@@ -117,77 +145,77 @@
                         <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
                         <div class="elementofinal col"> <span class="pendentes"><b>Pendente</b></span>
                             <button class="btpendentes float-none" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><img src="./img/editar.svg" alt=""></button>
-                            <button class="btpendentes float-none" type="button"><img src="./img/excluir.svg" alt=""></button>                      
+                            <button class="btpendentes float-none" type="button"><img src="./img/excluir.svg" alt=""></button>
                         </div>
 
 
 
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-      <!-- The Modal -->
-      <div class="modal fade" id="myModal">
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
         <div class="modal-dialog modal-fullscreen-sm-down">
-          <div class="modal-content col-md-6 col-sm-12">
-      
-            <!-- Modal Header -->
-            <div class="modal-header border-solicitacao">
-              <h4 class="modal-title">Edição de Pedidos</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            <div class="modal-content col-md-6 col-sm-12">
+
+                <!-- Modal Header -->
+                <div class="modal-header border-solicitacao">
+                    <h4 class="modal-title">Edição de Pedidos</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="row modal-body">
+
+                    <div class="justificativa col-md-6 col-sm-12">Nova Justificativa<br>
+                        <div class="inserir col-md-6 col-sm-12 border-gustavo">
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" id="comment" placeholder="Insira sua Justificativa aqui..." style="background-color: #E8F1F3;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12"> Resumo do Pedido<br>
+                        <div class="resumo col-md-6 col-sm-12">
+                            <table class="tabela2 table table-borderless border-gustavo">
+                                <thead>
+                                    <th>
+                                        Nome
+                                    </th>
+                                    <th>
+                                        Categoria
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding-top: 0%;">
+                                            copo plastico<br>
+                                        </td>
+                                        <td style="padding-top: 0%">
+                                            copa
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <div class="pedido">Nº pedido:001</div>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button style="background-color: #13293D; color: white;" type="button" class="btn" data-bs-dismiss="modal">Salvar</button>
+                </div>
+
             </div>
-      
-            <!-- Modal body -->
-          <div class="row modal-body">
-          
-              <div class="justificativa col-md-6 col-sm-12">Nova Justificativa<br>
-                <div class="inserir col-md-6 col-sm-12 border-gustavo">
-                  <div class="form-group">     
-                    <textarea class="form-control" rows="5" id="comment" placeholder="Insira sua Justificativa aqui..." style="background-color: #E8F1F3;"></textarea>
-                  </div>
-              </div>
-              </div>
-              <div class="col-md-6 col-sm-12"> Resumo do Pedido<br>
-                <div class="resumo col-md-6 col-sm-12">
-                  <table class="tabela2 table table-borderless border-gustavo">
-                      <thead>
-                          <th>
-                              Nome
-                          </th>
-                          <th>
-                              Categoria
-                          </th>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td style="padding-top: 0%;">
-                                  copo plastico<br>
-                              </td>
-                              <td style="padding-top: 0%">
-                                  copa
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-              </div>
-              
-          </div>
-      
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                      <div class="pedido">Nº pedido:001</div>
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-              <button  style="background-color: #13293D; color: white;" type="button" class="btn" data-bs-dismiss="modal">Salvar</button>
-            </div>
-      
-          </div>
         </div>
-      </div>
-      
-      
+    </div>
+
+
 
 </body>
 
