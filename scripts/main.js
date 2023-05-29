@@ -21,6 +21,6 @@ function carregar_usuario(componete_id){
           }
         })
         .catch((res) => {
-          window.location.href = "./login"
+          window.location.href = `/login`
         });
 }
