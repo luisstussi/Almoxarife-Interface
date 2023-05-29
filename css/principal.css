@@ -116,3 +116,7 @@
 .dropdown-toggle{
     border:0px;
 }
+
+.exclusivo-adm{
+    visibility: hidden;
+}
