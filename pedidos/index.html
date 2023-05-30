@@ -20,6 +20,7 @@
   <script>
     carregar_usuario("botao-adm")
   </script>
+  <script src="./pedidos.js"></script>
 </head>
 
 <body class="container-fluid">
@@ -83,8 +84,8 @@
         </div>
         <!-- Campo pesquisar  -->
         <div class="col-lg-10 col-sm 12">
-          <input class="float-start" type="text" placeholder="Nome do Produto">
-          <button type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
+          <input id="barra-pesquisa" class="float-start" type="text" placeholder="Nome do Produto">
+          <button onclick="listaritens()" type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
           <!-- Botao solicitar  -->
           <div class="solicitar float-start">
             <button type="button" class="btsolicitar btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Solicitar</button>
@@ -95,11 +96,10 @@
       <br><br><br>
       <div class="scroll-bg container text-center col-lg-10 col-sm 12">
         <div class="scroll-div text-center">
-          <div class="scroll-object tabela2 row row-cols-4">
+          <div id="tabela_pesquisa" class="scroll-object tabela2 row row-cols-4">
              <!-- Cabeçalho da tabela  -->
              <div class="nome elementoinicial col"><b>Nome</b></div>
-             <div class="dropdown elemento col
-         ">
+             <div class="dropdown elemento col">
               <button class=" botaocascata2 btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <b>Categoria</b>
               </button>
@@ -114,14 +114,14 @@
              <div class="nome elemento col"><b>Descrição</b></div>
              <div class="nome elementofinal col"><b>Solicitar</b></div>
             <!-- Elementos que se repetem  -->
-            <div class="elementoinicial col">Copo de Plastico</div>
+            <!--<div class="elementoinicial col">Copo de Plastico</div>
             <div class="elemento col">Copa</div>
             <div class="elemento col">Copo de Plastico 250ml</div>
             <div class="caixa form-check elementofinal col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <input class="inputcaixa form-check-input float-none" type="checkbox" value="" id="flexCheckChecked" checked>
               <label class="form-check-label" for="flexCheckChecked">
               </label>
-            </div>              
+            </div>-->              
           </div>
         </div>
       </div>
