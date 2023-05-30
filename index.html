@@ -14,33 +14,7 @@
   <link rel="stylesheet" href="./css/principal.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
-      //http://192.168.32.175:5500/login/
-      
-      console.log(localStorage.getItem('token'))
-
-      axios.get("/logtest",{
-            baseURL: dominio_back(),
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                'Accept' : 'application/json',
-                'Content-Type': 'application/json'
-            }    
-        })
-        .then(function (res) { console.log(res.data); return res.data})
-        .then(function (data) {
-          console.log(data);
-          console.log("autenticado");
-          if(data.user == "normal") {
-            document.getElementById('botao-adm').style.visibility = "hidden";
-          } else if(data.user == "admin") {
-            document.getElementById('botao-adm').style.visibility = "visible"
-          }
-          //setTimeout(() => {},5000)
-        })
-        .catch((res) => {
-          window.location.href = "./login"
-        });
-
+      carregar_usuario("botao-adm")
   </script>
 </head>
 
