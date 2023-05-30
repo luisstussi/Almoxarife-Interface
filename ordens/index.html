@@ -20,6 +20,7 @@
   <script>
     carregar_usuario("botao-adm")
   </script>
+  <script src="ordens.js" ></script>
 </head>
 </head>
 
@@ -84,23 +85,23 @@
         </div>
         <!-- Campo pesquisar  -->
         <div class="col-lg-10 col-sm 12">
-          <input class="float-start" type="text" placeholder="N° do Pedido">
-          <button type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
+          <input id="barra-ordens" class="float-start" type="text" placeholder="N° do Pedido">
+          <button onclick="listarordens()" type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
         </div>
       </div>
       <!-- Tabela  -->
       <br><br><br>
       <div class="scroll-bg container text-center col-lg-10 col-sm 12">
         <div class="scroll-div text-center">
-          <div class="scroll-object tabela contorno row row-cols-3">
+          <div id="tabela_ordem" class="scroll-object tabela contorno row row-cols-3">
              <!-- Cabeçalho da tabela  -->
              <div class="nome elementoinicial col"><b>N° do Pedido</b></div>
              <div class="nome elemento col"><b>Usuário</b></div>
              <div class="nome n1 elementofinal col"><b>.</b></div>
             <!-- Elementos que se repetem  -->
-            <div class="elementoinicial col">001</div>
+            <!--<div class="elementoinicial col">001</div>
             <div class="elemento col">Luiz inácio lula da silva</div>
-            <div class="elementofinal col"> <button class="exibir" data-bs-toggle="modal" data-bs-target="#myModal"><b>Exibir</b></button></div>
+            <div class="elementofinal col"> <button class="exibir" data-bs-toggle="modal" data-bs-target="#myModal"><b>Exibir</b></button></div>-->
             </div>              
           </div>
         </div>

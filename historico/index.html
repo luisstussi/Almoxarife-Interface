@@ -23,6 +23,7 @@
     <script>
         carregar_usuario("botao-adm")
       </script>
+      <script src="historico.js"></script>
 </head>
 
 <body class="container-fluid">
@@ -86,33 +87,7 @@
                 </div>
                 <!-- Campo pesquisar  -->
                 <div class="col-lg-10 col-sm 12">
-                    <input id="barra-pesquisa" class="float-start" type="text" placeholder="Nº do Pedido">
-
-                    <!--<script>
-                        function listarordens() {
-                            var pesquisa = document.getElementById("barra-pesquisa")
-                            console.log(localStorage.getItem('token'))
-                            axios.get( `/ordem`, {
-                               
-                                baseURL: dominio_back(),
-                                headers: {
-                                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                                    'Accept': 'application/json',
-                                    'Content-Type': 'application/json'
-                                },
-                                data:  JSON.stringify({ id: pesquisa.value })
-                            })
-                                .then(function (res) { console.log(res.data); return res.data })
-                                .then(function (data) {
-                                    console.log(data);
-                                })
-                                .catch((res) => {
-                                    //window.location.href = "./login"
-                                    console.log("Erro")
-                                });
-                        }
-                    </script>-->
-
+                    <input id="barra-ordens" class="float-start" type="text" placeholder="Nº do Pedido">
                     <button onclick="listarordens()" type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
                     <!-- Botao solicitar  -->
                 </div>
@@ -122,7 +97,7 @@
 
             <div class="scroll-bg container text-center col-lg-10 col-sm 12">
                 <div class="scroll-div text-center">
-                    <div class="scroll-object tabela contorno row row-cols-3">
+                    <div id="tabela_ordem" class="scroll-object tabela contorno row row-cols-3">
                         <!-- Cabeçalho da tabela  -->
                         <div class="nome elementonpedido col"><b>Nº do Pedido</b></div>
                         <div class="nome elementojust col"><b>Justificativa</b></div>
