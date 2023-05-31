@@ -2,7 +2,6 @@
     padding-left: 50px;
 }
 .div-inserir{
-    border: 1px solid #000000;
     margin-right: 80px;
     height: 40px;
 }
@@ -12,13 +11,28 @@
 }
 
 .div-descricao{
-    border: 1px solid #000000;
-    margin-right: 80px;
+    margin: 0;
     height: 100px;
 }
 
 .div-quantidade{
-    border: 1px solid #000000;
-    padding-right: 70px;
+    margin: 0;
     height: 30px;
+}
+
+.divisoes{
+    width: 19vw;
+    margin: 0;
+}
+
+.divisoes2{
+    width: 19vw;
+    height: 20vh;
+    margin: 0;
+}
+
+.divisoes3{
+    margin-left: 70px;
+    width: 13vw;
+    text-align: center;
 }

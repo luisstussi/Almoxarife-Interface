@@ -1,7 +1,6 @@
 .nome2 {
     display: inline-block;
     margin: 20px;
-    background-color: #eff9fc;
     padding-left: 10px ;
 }
 
@@ -62,6 +61,12 @@
     border-top-color: #006493;
     border-width: 2px;
     
+}
+
+.divisoes{
+    width: 55vw;
+    border: none;
+    margin: 0;
 }
 
 @media(max-width: 768px){
