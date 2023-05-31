@@ -1,11 +1,10 @@
 const url = "http://192.168.32.175:3000"
 
-
 // função para pesquisar as ordens
 function listarordens() {
-  var get = document.getElementById("barra-ordens");
-  console.log(localStorage.getItem("token"));
-  axios.get(`${url}/ordens/${get.value}`, {
+  var pesquisa = document.getElementById("barra-ordens");
+  console.log(pesquisa.value);
+  axios.get(`${url}/ordem/search?id=${pesquisa.value}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -30,10 +29,17 @@ function listarordens() {
               <li><a class="dropdown-item text-center" href="#">Negados</a></li>
           </ul>
       </div>`;
+
       for(var i = 0; i < data.length; i++){
-        tabela.innerHTML += `<div class="elementoinicial col">001</div>
-        <div class="elemento col">Necessario para a blablabla de bla por bla e na laba...</div>
-        <div class="elementofinal col"> <span class="aprovados"><b>Aprovado</b></span> </div>`;
+        tabela.innerHTML += `<div class="elementoinicial col">${data[i].id}</div>
+        <div class="elemento col">${data[i].justificativa}</div>`;
+        if(data[i].executada == true) {
+          tabela.innerHTML += `<div class="elementofinal col"><span class="aprovados"><b>Aprovado</b></span></div>`;
+        } else {
+          tabela.innerHTML += `<div class="elementofinal col"><span class="pendentes"><b>Pendente</b></span>
+          <button class="btpendentes float-none" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><img src="./img/editar.svg" alt=""></button>
+          <button class="btpendentes float-none" type="button"><img src="./img/excluir.svg" alt=""></button></div>`;
+        }
       }
     })
     .catch((res) => {

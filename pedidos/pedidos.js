@@ -3,7 +3,6 @@ const url = "http://192.168.32.175:3000"
 // função para pesquisar itens
 function listaritens() {
   var pesquisa = document.getElementById("barra-pesquisa");
-  console.log(localStorage.getItem("token"));
   axios.get(`${url}/itens/search?nome=${pesquisa.value}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
