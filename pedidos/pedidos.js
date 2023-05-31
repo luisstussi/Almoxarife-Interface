@@ -37,7 +37,7 @@ function listaritens() {
         <div class="elemento col">${data[i].categoria}</div>
         <div class="elemento col">${data[i].descricao}</div>
         <div class="caixa form-check elementofinal col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input class="inputcaixa form-check-input float-none" type="checkbox" value="" id="flexCheckChecked" checked>
+          <input class="inputcaixa form-check-input float-none" type="checkbox" value="" id="flexCheckChecked">
           <label class="form-check-label" for="flexCheckChecked">
           </label>`;
       }

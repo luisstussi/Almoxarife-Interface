@@ -38,7 +38,7 @@ function listaritens() {
         <div class="elemento col">${data[i].categoria}</div>
         <div class="elemento col">${data[i].descricao}</div>
         <div class="caixa form-check elementofinal col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input class="inputcaixa form-check-input float-none" type="checkbox" value="" id="flexCheckChecked i">
+          <input onclick="checklistado(${data[i].id})" class="inputcaixa form-check-input float-none" type="checkbox" value="${i}" id="flexCheckChecked i">
           <label class="form-check-label" for="flexCheckChecked">
           </label>`;
       }
@@ -46,4 +46,46 @@ function listaritens() {
     .catch((res) => {
       console.log("Erro");
     });
+}
+//função para reconhecer se o checkbox está marcado
+function checklistado(valor) {
+  localStorage.setItem('itemDeletar', valor);
+  console.log(valor)
+}
+//função para deletar itens
+async function deletarItens() {
+  const idItem = await localStorage.getItem("itemDeletar")
+  console.log(idItem)
+  console.log(`${url}/itens/${localStorage.getItem("itemDeletar")}`)
+  var deletar = document.getElementById("deletarItens");
+  axios.delete(`${url}/itens/${localStorage.getItem("itemDeletar")}`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  })
+  .then(function (res) {
+    console.log(res.data);
+    return res.data;
+  })
+  location.reload()
+  alert("Item excluido com sucesso")
+}
+
+function criarItens() {
+  var nome = document.getElementById("nomeItem");
+  var categoria = document.getElementById("categoriaItem")
+  var descricao = document.getElementById("descricaoItem")
+  var quantidade = document.getElementById("quantidadeItem")
+  const json = JSON.stringify({
+    nome: nome.value, 
+    categoria: "copa",
+    descricao: descricao.value,
+  })
+  console.log(json)
+  axios.post(`${url}/itens` , json , {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    }
+})
+.catch((res) => {console.log(res)})
 }
