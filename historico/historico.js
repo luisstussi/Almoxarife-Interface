@@ -51,10 +51,8 @@ function listarordens() {
 function editarOrdens() {
   var update = document.getElementById("newjust")
   const json = JSON.stringify({
-    descricao: descricao.value,
   })
-  console.log(json)
-  axios.put(`${url}/itens/search` , json , {
+  axios.put(`${url}/ordem/search?nome=${update.value}` ,{
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     }
