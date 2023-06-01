@@ -64,8 +64,3 @@ function criarUsuario(){
           console.log(res)
         });
     }
-
-//atualizar usuario
-function atulizarUsuario(){
-  
-}
