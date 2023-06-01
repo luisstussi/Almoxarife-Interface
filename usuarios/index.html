@@ -16,7 +16,8 @@
   <link rel="stylesheet" href="./usuarios.css">
   <link rel="stylesheet" href="./criar.css">
   <link rel="stylesheet" href="./modal-usuario.css">
-
+  <script src="./usuarios.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body class="container-fluid">
@@ -79,8 +80,8 @@
         </div>
         <!-- Campo pesquisar  -->
         <div class="col-lg-10 col-sm 12">
-          <input class="float-start" type="text" placeholder="Nome do Usuario">
-          <button type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
+          <input id="barra-pesquisa" class="float-start" type="text" placeholder="Nome do Usuario">
+          <button onclick="pesquisaUsuario()" type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
           <!-- Botao solicitar  -->
           <div class="criar float-start">
             <button type="button" class="btcriar btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">Criar</button>
@@ -91,7 +92,7 @@
       <br><br><br>
       <div class="scroll-bg container text-center col-lg-10 col-sm 12">
         <div class="scroll-div text-center">
-          <div class="scroll-object tabela contorno row row-cols-3">
+          <div id="tabela_pesquisa" class="scroll-object tabela contorno row row-cols-3">
             <!-- Cabeçalho da tabela  -->
             <div class="nome elementoinicial col"><b>Nome</b></div>
             <div class="dropdown elemento col">
@@ -100,11 +101,11 @@
             </div>
             <div class="nome elementofinal col"><b>Solicitar</b></div>
             <!-- Elementos que se repetem  -->
-            <div class="elementoinicial col">Luis Henrique alvez de Souza</div>
+            <!--<div class="elementoinicial col">Luis Henrique alvez de Souza</div>
             <div class="elemento col email">luishenriquealvezdesouza@gmail.com</div>
             <div class="caixa form-check elementofinal col">
               <button class="engrenagem" data-bs-toggle="modal" data-bs-target="#myModal"><img src="./img/engrenagem.png" alt="" style="width: 25px;"></button>
-            </div>
+            </div>-->
 
           </div>
         </div>
@@ -173,26 +174,30 @@
         <!-- Modal body -->
         <div style="padding-left: 14px;">Nome:</div>
         <div class="nome3">
-          <input class="divisoes" type="text" style="text-align: left;">
+          <input id="nomeUsuario" class="divisoes" type="text" style="text-align: left;">
         </div>
         <div style="padding-left: 14px;">Email:</div>
         <div class="nome3">
-          <input class="divisoes" type="text" style="text-align: left;">
+          <input id="emailUsuario" class="divisoes" type="text" style="text-align: left;">
         </div>
         <div style="padding-left: 14px;">Senha:</div>
         <div class="nome3">
-          <input class="divisoes" type="text" style="text-align: left;">
+          <input id="senhaUsuario" class="divisoes" type="text" style="text-align: left;">
         </div>
         <div style="padding-left: 14px;">CPF:</div>
         <div class="nome3">
-          <input class="divisoes" type="text" style="text-align: left;">
+          <input id="cpfUsuario" class="divisoes" type="text" style="text-align: left;">
+        </div>
+        <div style="padding-left: 14px;">Telefone:</div>
+        <div class="nome3">
+          <input id="telefoneUsuario" class="divisoes" type="text" style="text-align: left;">
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
           <div class="float-start">
           </div>
           <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #13293D; color: white;">Cancelar</button>
-          <button style="background-color: #1162ad; color: white;" type="button" class="btn" data-bs-dismiss="modal">Criar</button>
+          <button onclick="criarUsuario()" style="background-color: #1162ad; color: white;" type="button" class="btn" data-bs-dismiss="modal">Criar</button>
         </div>
       </div>
     </div>
