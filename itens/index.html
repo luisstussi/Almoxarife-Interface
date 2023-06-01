@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="./modal-criar-itens.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
+    let marcaCategoria = "";
     carregar_usuario("botao-adm")
   </script>
 </head>
@@ -136,13 +137,13 @@
           <!-- Modal body -->
           <div class="modal-body">
             <div class="row">
-              <div class="col-sm-6" style="margin-right: 70px;">
+              <div class="col-md-6" style="margin-right: 70px;">
                 Nome:
               </div>
-              <div class="col-sm-4">
+              <div class="col-md-4">
                 Categoria:
               </div>
-              <div class=" col-sm-6 div-inserir">
+              <div class=" col-md-6 div-inserir">
                 <input id="nomeItem" class="divisoes" type="text" style="text-align: left;">
               </div>
               <div class="col-sm-4 div-copa">
@@ -150,10 +151,12 @@
                   <button class="botaocascata1 btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <strong>categoria</strong>
                   </button>
-                  <ul class="dropdown-menu" id="BotaoCascata">
-                    <li class="dropdown-item">ITENS</li>
-                    <li class="dropdown-item">ORDENS</li>
-                    <li class="dropdown-item">USUARIOS</li>
+                  <ul class="dropdown-menu" id="categoriaItem">
+                    <li onclick="categoriaTipo('banheiro')" class="dropdown-item">banheiro</li>
+                    <li onclick="categoriaTipo('copa')" class="dropdown-item">copa</li>
+                    <li onclick="categoriaTipo('laboratorio')" class="dropdown-item">laboratorio</li>
+                    <li onclick="categoriaTipo('manutencao')" class="dropdown-item">manutenção</li>
+                    <li onclick="categoriaTipo('escritorio')" class="dropdown-item">escritorio</li>
                   </ul>
                 </div>
               </div>
