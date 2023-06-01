@@ -1,10 +1,11 @@
-const url = "http://192.168.32.175:3000"
+const url = "http://192.168.32.175:3000";
 
 // função para pesquisar as ordens
 function listarordens() {
   var pesquisa = document.getElementById("barra-ordens");
   console.log(pesquisa.value);
-  axios.get(`${url}/ordem/search?id=${pesquisa.value}`, {
+  axios
+    .get(`${url}/ordem/search?id=${pesquisa.value}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -29,11 +30,10 @@ function listarordens() {
               <li><a class="dropdown-item text-center" href="#">Negados</a></li>
           </ul>
       </div>`;
-
-      for(var i = 0; i < data.length; i++){
+      for (var i = 0; i < data.length; i++) {
         tabela.innerHTML += `<div class="elementoinicial col">${data[i].id}</div>
         <div class="elemento col">${data[i].justificativa}</div>`;
-        if(data[i].executada == true) {
+        if (data[i].executada == true) {
           tabela.innerHTML += `<div class="elementofinal col"><span class="aprovados"><b>Aprovado</b></span></div>`;
         } else {
           tabela.innerHTML += `<div class="elementofinal col"><span class="pendentes"><b>Pendente</b></span>
@@ -45,4 +45,19 @@ function listarordens() {
     .catch((res) => {
       console.log("Erro");
     });
+}
+
+// função editar justificativa
+function editarOrdens() {
+  var update = document.getElementById("newjust")
+  const json = JSON.stringify({
+    descricao: descricao.value,
+  })
+  console.log(json)
+  axios.put(`${url}/itens/search` , json , {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    }
+})
+.catch((res) => {console.log(res)})
 }
