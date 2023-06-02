@@ -25,9 +25,6 @@ function criarUsuario(){
           console.log(res);
         });
     }
-
-
-
   function pesquisaUsuario() {
       var pesquisa = document.getElementById("barra-pesquisa");
       console.log(pesquisa.value)
@@ -63,4 +60,12 @@ function criarUsuario(){
           console.log("Erro");
           console.log(res)
         });
-    }
+}
+//função para deletar usuario
+function deletarUsuario(){
+  axios.delete(`${url}/usuario/:id`,{
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  })
+}
