@@ -4,6 +4,7 @@ const url = "http://192.168.32.175:3000";
 function listaritens() {
   var pesquisa = document.getElementById("barra-pesquisa");
   console.log(localStorage.getItem("token"));
+  
   axios
     .get(`${url}/itens/search?nome=${pesquisa.value}`, {
       headers: {
@@ -38,7 +39,7 @@ function listaritens() {
         <div class="elemento col">${data[i].categoria}</div>
         <div class="elemento col">${data[i].descricao}</div>
         <div class="caixa form-check elementofinal col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input onclick="checklistado(${data[i].id})" class="inputcaixa form-check-input float-none" type="checkbox" value="${i}" id="flexCheckChecked i">
+          <input id="checkboxitem${i}" onclick="checklistado(${data[i].id},checkboxitem${i})" class="inputcaixa form-check-input float-none" type="checkbox" value="${i}" id="flexCheckChecked i">
           <label class="form-check-label" for="flexCheckChecked">
           </label>`;
       }
@@ -47,29 +48,47 @@ function listaritens() {
       console.log("Erro");
     });
 }
+
+
 //função para reconhecer se o checkbox está marcado
-function checklistado(valor) {
-  localStorage.setItem("itemDeletar", valor);
-  console.log(valor);
+function checklistado(valor,componente) {
+  console.log("valor atual: ",valor);
+    if(componente.checked){
+      selecionados.push(valor);
+    }else{
+      var novalista = []
+      for(var i = 0; i < selecionados.length; i++) {
+        if(selecionados[i]!== valor) {
+          novalista.push(selecionados[i]);
+        }
+      }
+      selecionados = novalista;
+    }
+    console.log("valor somado: ",selecionados);
 }
 //função para deletar itens
 async function deletarItens() {
-  const idItem = await localStorage.getItem("itemDeletar");
-  console.log(idItem);
-  console.log(`${url}/itens/${localStorage.getItem("itemDeletar")}`);
-  var deletar = document.getElementById("deletarItens");
-  axios
-    .delete(`${url}/itens/${localStorage.getItem("itemDeletar")}`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
-    .then(function (res) {
-      console.log(res.data);
-      return res.data;
-    });
-  location.reload();
+  for(var i = 0 ; i < selecionados.length; i++){
+    const idItem = selecionados[i];
+    console.log(idItem);
+    console.log(`${url}/itens/${idItem}`);
+    axios
+      .delete(`${url}/itens/${idItem}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .then(function (res) {
+        console.log(res.data);
+        return res.data;
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+    
+  }
   alert("Item excluido com sucesso");
+  location.reload();
 }
 
 function categoriaTipo(tipo){
