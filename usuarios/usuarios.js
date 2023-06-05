@@ -47,13 +47,17 @@ function criarUsuario(){
             <b>Email</b>
             </button>
           </div>
-          <div class="nome elementofinal col"><b>Solicitar</b></div>`;
+          <div class="nome elementofinal col"><b>Solicitar</b></div>
+          <div class="nome elementofinal col"><b>Deletar</b></div>`
           for(var i = 0; i < data.length; i++){
             tabela.innerHTML += `<div class="elementoinicial col">${data[i].nome}</div>
             <div class="elemento col email">${data[i].email}</div>
             <div class="caixa form-check elementofinal col">
               <button class="engrenagem" data-bs-toggle="modal" data-bs-target="#myModal"><img src="./img/engrenagem.png" alt="" style="width: 25px;"></button>
-            </div>`;
+            </div>
+            <div class="caixa form-check elementofinal col">
+              <button onclick="deletarUsuario" class="lixeira"><img src="./img/excluir.svg" alt=""></button>
+            </div>`
           }
         })
         .catch((res) => {
@@ -61,11 +65,14 @@ function criarUsuario(){
           console.log(res)
         });
 }
-//função para deletar usuario
-function deletarUsuario(){
-  axios.delete(`${url}/usuario/:id`,{
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  })
-}
+function deletarUsuario(identidade) {
+  console.log(identidade)
+  axios
+    .delete(`${url}/ususario/${identidade}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+    location.reload();
+    alert("Usuario excluido com sucesso!!");
+  }

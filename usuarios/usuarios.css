@@ -83,6 +83,11 @@ input {
 
 .caixa {
     margin: 0px;
+    border-right-width: 0;
+}
+
+.lixeira {
+    border-width: 0px;
 }
 
 .engrenagem{
@@ -121,6 +126,7 @@ input {
 .nome {
     align-self: center;
     padding: 6px;
+    border-right-width: 0px;
 }
 
 .form-check-input:checked {
