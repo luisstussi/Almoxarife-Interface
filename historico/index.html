@@ -22,8 +22,9 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         carregar_usuario("botao-adm")
-      </script>
-      <script src="historico.js"></script>
+    </script>
+    <script src="historico.js"></script>
+      
 </head>
 
 <body class="container-fluid">
@@ -88,7 +89,7 @@
                 <!-- Campo pesquisar  -->
                 <div class="col-lg-10 col-sm 12">
                     <input id="barra-ordens" class="float-start" type="text" placeholder="Nº do Pedido">
-                    <button onclick="listarordens()" type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
+                    <button onclick="listaAprovados()" type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
                     <!-- Botao solicitar  -->
                 </div>
             </div>
@@ -108,7 +109,6 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item text-center" href="#">Aprovados</a></li>
                                 <li><a class="dropdown-item text-center" href="#">Pendentes</a></li>
-                                <li><a class="dropdown-item text-center" href="#">Negados</a></li>
                             </ul>
                         </div>
                         <!-- Elementos que se repetem  -->
@@ -196,5 +196,8 @@
 
 
 </body>
+<script>
+    listaAprovados()
+</script>
 
 </html>
