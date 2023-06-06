@@ -33,7 +33,7 @@ function pesquisaUsuario() {
     .get(`${url}/user/search?nome=${pesquisa.value}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
+      }
     })
     .then(function (res) {
       console.log(res.data);
@@ -57,7 +57,7 @@ function pesquisaUsuario() {
               <button class="engrenagem" data-bs-toggle="modal" data-bs-target="#myModal"><img src="./img/engrenagem.png" alt="" style="width: 25px;"></button>
             </div>
             <div class="caixa form-check elementofinal col">
-              <button onclick="deletarUsuario" class="lixeira"><img src="./img/excluir.svg" alt=""></button>
+              <button onclick="deletarUsuario(${data[i].id})" class="lixeira"><img src="./img/excluir.svg" alt=""></button>
             </div>`;
       }
     })
@@ -69,10 +69,13 @@ function pesquisaUsuario() {
 //função para deletar o usuario
 function deletarUsuario(identidade) {
   console.log(identidade);
-  axios.delete(`${url}/ususario/${identidade}`, {
+  axios.delete(`${url}/usuario/${identidade}`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
+  }).catch((res) => {
+    console.log("Erro");
+    console.log(res)
   });
   location.reload();
   alert("Usuario excluido com sucesso!!");
