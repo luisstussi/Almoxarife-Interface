@@ -121,5 +121,6 @@ function criarItens() {
   for(var i = 0; i < quantidade.value; i++){
     addItens(json);
   }
-  
+  location.reload();
+  alert("itens criados com sucesso!!")
 }
