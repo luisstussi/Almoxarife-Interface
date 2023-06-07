@@ -19,6 +19,8 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
     carregar_usuario("botao-adm")
+    var selecionados = []
+    var todosItens = []
   </script>
   <script src="./pedidos.js"></script>
 </head>
@@ -88,7 +90,7 @@
           <button onclick="listaritens()" type="button" class="float-start btpesquisar btn btn-primary">Pesquisar</button>
           <!-- Botao solicitar  -->
           <div class="solicitar float-start">
-            <button onclick="solicitarItens()" type="button" class="btsolicitar btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Solicitar</button>
+            <button onclick="carregarModal()" type="button" class="btsolicitar btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Solicitar</button>
           </div>
         </div>
       </div>
@@ -161,15 +163,7 @@
                           Categoria
                       </th>
                   </thead>
-                  <tbody>
-                      <tr>
-                          <td style="padding-top: 0%;">
-                              copo plastico<br>
-                          </td>
-                          <td style="padding-top: 0%">
-                              copa
-                          </td>
-                      </tr>
+                  <tbody id="modalPedidos">
                   </tbody>
               </table>
           </div>

@@ -12,18 +12,6 @@ function listarpendentes() {
   listaAprovados();
 }
 
-// função excluir solicitacao
-function deletarPendentes(identidade) {
-  console.log(identidade);
-  axios.delete(`${url}/ordens/${identidade}`, {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  });
-  location.reload();
-  alert("Solicitação excluida com sucesso!!");
-}
-
 // função para pesquisar as ordens aprovadas
 function listaAprovados() {
   const status_filter = localStorage.getItem("filtro_status");
@@ -93,4 +81,16 @@ function listaAprovados() {
     .catch((res) => {
       console.log("Erro");
     });
+}
+
+// função excluir solicitacao
+function deletarPendentes(identidade) {
+  console.log(identidade);
+  axios.delete(`${url}/ordemz/${identidade}`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+  location.reload();
+  alert("Solicitação excluida com sucesso!!");
 }

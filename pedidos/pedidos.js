@@ -15,6 +15,7 @@ function listaritens() {
     })
     .then(function (data) {
       console.log(data);
+      todosItens = data;
       console.log(data.length);
       const tabela = document.getElementById("tabela_pesquisa");
       tabela.innerHTML = `<div class="nome elementoinicial col"><b>Nome</b></div>
@@ -46,7 +47,7 @@ function listaritens() {
       console.log("Erro");
     });
 }
-// funcao para verificar quais itens estao selecionados
+//função para reconhecer se o checkbox está marcado
 function checklistado(valor, componente) {
   console.log("valor atual: ", valor);
   if (componente.checked) {
@@ -65,7 +66,7 @@ function checklistado(valor, componente) {
 // Após verificar quais itens estao selecionados ele vem para esta funcao
 // para solicitar os itens
 async function solicitar() {
-  for(var i = 0 ; i < selecionados.length; i++){
+  for (var i = 0; i < selecionados.length; i++) {
     const idItem = selecionados[i];
     console.log(idItem);
     console.log(`${url}/itens/${idItem}`);
@@ -80,10 +81,28 @@ async function solicitar() {
         return res.data;
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
       });
-    
   }
   alert("Pedido solicitado com sucesso");
   location.reload();
+}
+//função para carregar o modal
+function carregarModal() {
+  for (var i = 0; i < selecionados.length; i++) {
+    for (var j = 0; j < todosItens.length; j++) {
+      if (todosItens[j].id === selecionados[i]) {
+        document.getElementById("modalPedidos").innerHTML += `
+                      <tr>
+                       <td style="padding-top: 0%;">
+                              ${todosItens[j].nome}<br>
+                          </td>
+                          <td style="padding-top: 0%">
+                              ${todosItens[j].categoria}
+                          </td>
+                      </tr>
+        `;
+      }
+    }
+  }
 }

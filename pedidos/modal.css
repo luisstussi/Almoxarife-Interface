@@ -19,7 +19,6 @@
 }
 .resumo{
     width: auto;
-    overflow:scroll;
     grid-template-columns: 100%;
     row-gap: 20px;
 }
@@ -37,6 +36,7 @@
 .border-gustavo{
     border: solid #006493;
     border-width: 1px;
+
     
 }
 .form-control{

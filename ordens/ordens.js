@@ -28,8 +28,8 @@ function listarordens() {
         <div class="elemento col"></div>
         <div class="elemento col"></div>
         <div class="elementofinal col">
-        <button class="btpendentes float-none" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><img class="aprovar" src="../historico/img/aprovar.svg" alt=""></button>
-        <button class="btpendentes float-none" type="button"><img src="../historico/img/excluir.svg" alt=""></button></div>`;
+        <button onclick="aprovarordens(${data[i].id})" class="btpendentes float-none" type="button" ><img class="aprovar" src="../historico/img/aprovar.svg" alt=""></button>
+        <button onclick="rejeitarordens(${data[i].id})" class="btpendentes float-none" type="button"><img src="../historico/img/excluir.svg" alt=""></button></div>`;
       }
     })
     .catch((res) => {
@@ -38,8 +38,8 @@ function listarordens() {
 }
 
 // função para rejeitar ordens
-function rejeitarordens() {
-    axios.delete(`${url}/ordemz`, {
+function rejeitarordens(idExcluir) {
+    axios.delete(`${url}/ordemz/${idExcluir}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -51,6 +51,27 @@ function rejeitarordens() {
       console.log("Erro");
       console.log(res)
     });
-    //location.reload();
+    location.reload();
     alert("Ordem rejeitada com sucesso!!");
   }
+
+function aprovarordens(idAprovar) {
+  var json = {
+    "justificativa": "eu preciso de papeis",
+    "itens": [1,15,16,17,18]
+  }
+  axios.post(`${url}/validaordem/${idAprovar}`, json, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  })
+  .then((res) => {
+    return res.data;
+  })
+  .catch((res) => {
+    console.log("Erro");
+    console.log(res)
+  });
+  //location.reload();
+  alert("Ordem Aprovada com sucesso!!");
+}
