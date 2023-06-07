@@ -5,7 +5,8 @@ const url = "http://192.168.32.175:3000"
 function listarordens() {
   var get = document.getElementById("barra-ordens");
   console.log(localStorage.getItem("token"));
-  axios.get(`${url}/ordens/${get.value}`, {
+  axios
+  .get(`${url}/ordem/search?id=${get.value}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -31,3 +32,21 @@ function listarordens() {
       console.log("Erro");
     });
 }
+
+// função para rejeitar ordens
+function rejeitarordens() {
+    axios.delete(`${url}/ordemz`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+    .then(function (res) {
+      return res.data;
+    })
+    .catch((res) => {
+      console.log("Erro");
+      console.log(res)
+    });
+    //location.reload();
+    alert("Ordem rejeitada com sucesso!!");
+  }
