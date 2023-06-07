@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="./modal-usuario.css">
   <script src="./usuarios.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script> var alteracao;</script>
 </head>
 
 <body class="container-fluid">
@@ -129,33 +130,33 @@
         <!-- Modal body -->
         <div style="padding-left: 14px;">Nome:</div>
         <div class="nome2">
-          <input class="divisoes" type="text" style="text-align: left;">
+          <input id="nomeEditar" class="divisoes" type="text" style="text-align: left;">
           <div class="pencil float-end">
 
           </div>
         </div>
         <div style="padding-left: 14px;">Email:</div>
         <div class="nome2">
-          <input class="divisoes" type="text" style="text-align: left;">
+          <input id="emailEditar" class="divisoes" type="text" style="text-align: left;">
           <div class="pencil float-end">
           </div>
         </div>
         <div style="padding-left: 14px;">Senha:</div>
         <div class="nome2">
-          <input class="divisoes" type="text" style="text-align: left;">
+          <input id="senhaEditar" class="divisoes" type="text" style="text-align: left;">
         </div>
         <div style="padding-left: 14px;">CPF:</div>
         <div class="nome2">
-          <input class="divisoes" type="text" style="text-align: left;">
+          <input id="cpfEditar" class="divisoes" type="text" style="text-align: left;">
         </div>
         <div style="padding-left: 14px;">Telefone:</div>
         <div class="nome2">
-          <input class="divisoes" type="text" style="text-align: left;">
+          <input id="telefoneEditar" class="divisoes" type="text" style="text-align: left;">
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #13293D; color: white;">Cancelar</button>
-          <button style="background-color: #1162ad; color: white;" type="button" class="btn" data-bs-dismiss="modal">Salvar</button>
+          <button onclick="atualizarUsuario()" style="background-color: #1162ad; color: white;" type="button" class="btn" data-bs-dismiss="modal">Salvar</button>
         </div>
       </div>
     </div>
