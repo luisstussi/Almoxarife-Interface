@@ -24,7 +24,40 @@ function criarUsuario() {
     .catch((res) => {
       console.log(res);
     });
+    location.reload();
+    alert("Usuario criado com sucesso!!")
 }
+function atualizarUsuario() {
+  console.log(alteracao)
+  var nome = document.getElementById("nomeEditar");
+  var email = document.getElementById("emailEditar");
+  var senha = document.getElementById("senhaEditar");
+  var cpf = document.getElementById("cpfEditar");
+  var telefone = document.getElementById("telefoneEditar");
+  const json = {
+    nome: nome.value,
+    email: email.value,
+    senha: senha.value,
+    cpf: cpf.value,
+    telefone: telefone.value,
+  };
+  console.log(json)
+  axios.put(`${url}/usuario/${alteracao}`, json, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    }
+  }).catch((res) => {
+    console.log("Erro");
+    console.log(res)
+  });
+  
+
+  }
+  function editarUsuario(idUsuario) {
+    alteracao = idUsuario;
+    console.log(alteracao);
+  }
+
 function pesquisaUsuario() {
   var pesquisa = document.getElementById("barra-pesquisa");
   console.log(pesquisa.value);
@@ -54,7 +87,7 @@ function pesquisaUsuario() {
         tabela.innerHTML += `<div class="elementoinicial col">${data[i].nome}</div>
             <div class="elemento col email">${data[i].email}</div>
             <div class="caixa form-check elementofinal col">
-              <button class="engrenagem" data-bs-toggle="modal" data-bs-target="#myModal"><img src="./img/engrenagem.png" alt="" style="width: 25px;"></button>
+              <button onclick="editarUsuario(${data[i].id})" class="engrenagem" data-bs-toggle="modal" data-bs-target="#myModal"><img src="./img/engrenagem.png" alt="" style="width: 25px;"></button>
             </div>
             <div class="caixa form-check elementofinal col">
               <button onclick="deletarUsuario(${data[i].id})" class="lixeira"><img src="./img/excluir.svg" alt=""></button>
