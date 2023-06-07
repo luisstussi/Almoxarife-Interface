@@ -50,7 +50,7 @@ function atualizarUsuario() {
     console.log("Erro");
     console.log(res)
   });
-  
+  location.reload();
 
   }
   function editarUsuario(idUsuario) {
