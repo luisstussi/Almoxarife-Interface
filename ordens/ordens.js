@@ -20,12 +20,16 @@ function listarordens() {
       console.log(data.length);
       const tabela = document.getElementById("tabela_ordem");
       tabela.innerHTML = `<div class="nome elementoinicial col"><b>N° do Pedido</b></div>
-      <div class="nome elemento col"><b>Usuário</b></div>
+      <div class="nome elemento col"><b>Justificativa</b></div>
+      <div class="nome elemento col"><b>Itens</b></div>
       <div class="nome n1 elementofinal col"><b>.</b></div>`;
       for(var i = 0; i < data.length; i++){
         tabela.innerHTML += `<div class="elementoinicial col">${data[i].id}</div>
-        <div class="elemento col">${data[i].usuario_id}</div>
-        <div class="elementofinal col"> <button class="exibir" data-bs-toggle="modal" data-bs-target="#myModal"><b>Exibir</b></button></div>`;
+        <div class="elemento col"></div>
+        <div class="elemento col"></div>
+        <div class="elementofinal col">
+        <button class="btpendentes float-none" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><img class="aprovar" src="../historico/img/aprovar.svg" alt=""></button>
+        <button class="btpendentes float-none" type="button"><img src="../historico/img/excluir.svg" alt=""></button></div>`;
       }
     })
     .catch((res) => {

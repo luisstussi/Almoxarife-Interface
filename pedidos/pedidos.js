@@ -84,6 +84,6 @@ async function solicitar() {
       });
     
   }
-  alert("Item excluido com sucesso");
+  alert("Pedido solicitado com sucesso");
   location.reload();
 }
