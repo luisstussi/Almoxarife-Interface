@@ -28,7 +28,7 @@ function listarordens() {
         <div class="elemento col">${data[i].justificativa}</div>
         <div class="elemento col">${data[i].nome}</div>
         <div class="elementofinal col">
-        <button onclick="aprovarordens(${data[i].id})" class="btpendentes float-none" type="button" ><img class="aprovar" src="../historico/img/aprovar.svg" alt=""></button>
+        <button onclick="aprovarordens(${data[i].ordem_id})" class="btpendentes float-none" type="button" ><img class="aprovar" src="../historico/img/aprovar.svg" alt=""></button>
         <button onclick="rejeitarordens(${data[i].id})" class="btpendentes float-none" type="button"><img src="../historico/img/excluir.svg" alt=""></button></div>`;
       }
     })
