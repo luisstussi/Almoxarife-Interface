@@ -87,7 +87,7 @@ function carregarModal() {
                               ${todosItens[j].categoria}
                           </td>
                       </tr>
-        `;
+                      `;
       }
     }
   }
