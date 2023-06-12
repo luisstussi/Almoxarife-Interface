@@ -94,4 +94,3 @@ function deletarPendentes(identidade) {
   location.reload();
   alert("Solicitação excluida com sucesso!!");
 }
-
