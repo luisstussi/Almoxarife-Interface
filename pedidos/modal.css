@@ -40,9 +40,11 @@
     
 }
 .form-control{
-    border-width: 0;
+    border-width: ;
     background-color: #E8F1F3;
-    padding-bottom: 100px;
+    padding-bottom: 145px;
+    margin-left: 0;
+    text-align: left;
 }
 .modal-footer{
     border-top-color: #006493;
