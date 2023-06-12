@@ -65,27 +65,8 @@ function checklistado(valor, componente) {
 }
 // Após verificar quais itens estao selecionados ele vem para esta funcao
 // para solicitar os itens
-async function solicitar() {
-  for (var i = 0; i < selecionados.length; i++) {
-    const idItem = selecionados[i];
-    console.log(idItem);
-    console.log(`${url}/itens/${idItem}`);
-    axios
-      .delete(`${url}/itens/${idItem}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      })
-      .then(function (res) {
-        console.log(res.data);
-        return res.data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-  alert("Pedido solicitado com sucesso");
-  location.reload();
+function solicitar() {
+  axios.post(``)
 }
 //função para carregar o modal
 function carregarModal() {

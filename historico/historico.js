@@ -50,14 +50,14 @@ function listaAprovados() {
         console.log(data[i].executada);
         console.log(localStorage.getItem("filtro_status"));
         if (status_filter === null) {
-          tabela.innerHTML += `<div class="elementoinicial col">${data[i].id}</div>
+          tabela.innerHTML += `<div class="elementoinicial col">${data[i].ordem_id}</div>
             <div class="elemento col">${data[i].justificativa}</div>`;
           if (data[i].executada == true) {
             tabela.innerHTML += `<div class="elementofinal col"><span class="aprovados"><b>Aprovado</b></span></div>`;
           } else {
             tabela.innerHTML += `<div class="elementofinal col"><span class="pendentes"><b>Pendente</b></span>
           <button class="btpendentes float-none" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><img src="./img/editar.svg" alt=""></button>
-          <button onclick="deletarPendentes(${data[i].id})" class="btpendentes float-none" type="button"><img src="./img/excluir.svg" alt=""></button></div>`;
+          <button onclick="deletarPendentes(${data[i].ordem_id})" class="btpendentes float-none" type="button"><img src="./img/excluir.svg" alt=""></button></div>`;
           }
         } else {
           if (status_filter) {

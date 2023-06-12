@@ -24,9 +24,9 @@ function listarordens() {
       <div class="nome elemento col"><b>Itens</b></div>
       <div class="nome n1 elementofinal col"><b>.</b></div>`;
       for(var i = 0; i < data.length; i++){
-        tabela.innerHTML += `<div class="elementoinicial col">${data[i].id}</div>
-        <div class="elemento col"></div>
-        <div class="elemento col"></div>
+        tabela.innerHTML += `<div class="elementoinicial col">${data[i].ordem_id}</div>
+        <div class="elemento col">${data[i].justificativa}</div>
+        <div class="elemento col">${data[i].nome}</div>
         <div class="elementofinal col">
         <button onclick="aprovarordens(${data[i].id})" class="btpendentes float-none" type="button" ><img class="aprovar" src="../historico/img/aprovar.svg" alt=""></button>
         <button onclick="rejeitarordens(${data[i].id})" class="btpendentes float-none" type="button"><img src="../historico/img/excluir.svg" alt=""></button></div>`;
