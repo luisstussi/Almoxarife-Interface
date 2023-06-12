@@ -25,7 +25,7 @@ function listarordens() {
       <div class="nome n1 elementofinal col"><b>.</b></div>`;
       for(var i = 0; i < data.length; i++){
         tabela.innerHTML += `<div class="elementoinicial col">${data[i].id}</div>
-        <div class="elemento col"></div>
+        <div class="elemento col">${data[i].justificativa}</div>
         <div class="elemento col"></div>
         <div class="elementofinal col">
         <button onclick="aprovarordens(${data[i].id})" class="btpendentes float-none" type="button" ><img class="aprovar" src="../historico/img/aprovar.svg" alt=""></button>
@@ -55,6 +55,7 @@ function rejeitarordens(idExcluir) {
     alert("Ordem rejeitada com sucesso!!");
   }
 
+//função para aprovar ordens
 function aprovarordens(idAprovar) {
   var json = {
     "justificativa": "eu preciso de papeis",
