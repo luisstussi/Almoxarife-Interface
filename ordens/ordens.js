@@ -24,11 +24,6 @@ function listarordens() {
       <div class="nome elemento col"><b>Itens</b></div>
       <div class="nome n1 elementofinal col"><b>.</b></div>`;
       for(var i = 0; i < data.length; i++){
-<<<<<<< HEAD
-        tabela.innerHTML += `<div class="elementoinicial col">${data[i].id}</div>
-        <div class="elemento col">${data[i].justificativa}</div>
-        <div class="elemento col"></div>
-=======
         tabela.innerHTML += `<div class="elementoinicial col">${data[i].ordem_id}</div>
         <div class="elemento col">${data[i].justificativa}</div>
         <div class="elemento col">${data[i].nome}</div>
