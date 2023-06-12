@@ -27,7 +27,6 @@ function listarordens() {
         tabela.innerHTML += `<div class="elementoinicial col">${data[i].ordem_id}</div>
         <div class="elemento col">${data[i].justificativa}</div>
         <div class="elemento col">${data[i].nome}</div>
->>>>>>> a02749d1238f5dee3c842a062c6d7461229cf123
         <div class="elementofinal col">
         <button onclick="aprovarordens(${data[i].id})" class="btpendentes float-none" type="button" ><img class="aprovar" src="../historico/img/aprovar.svg" alt=""></button>
         <button onclick="rejeitarordens(${data[i].id})" class="btpendentes float-none" type="button"><img src="../historico/img/excluir.svg" alt=""></button></div>`;

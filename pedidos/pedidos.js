@@ -66,9 +66,12 @@ function checklistado(valor, componente) {
 // Após verificar quais itens estao selecionados ele vem para esta funcao
 // para solicitar os itens
 function solicitar() {
-  var json = document.getElementById("justificativaOrdem")
+  var json = {
+    "justificativa": document.getElementById("justificativaOrdem").value,
+    "itens": selecionados
+  }
   console.log(json)
-  axios.post(`${url}/itens`, json, {
+  axios.post(`${url}/ordens`, json, {
       headers: {
 
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -76,6 +79,7 @@ function solicitar() {
     })
     .catch((res) => {
       console.log(res);
+      
     });
 }
 //função para carregar o modal
