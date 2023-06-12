@@ -81,6 +81,8 @@ function solicitar() {
       console.log(res);
       
     });
+    
+  location.reload();
 }
 //função para carregar o modal
 function carregarModal() {
