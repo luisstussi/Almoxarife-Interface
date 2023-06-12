@@ -19,17 +19,8 @@ function listaritens() {
       console.log(data.length);
       const tabela = document.getElementById("tabela_pesquisa");
       tabela.innerHTML = `<div class="nome elementoinicial col"><b>Nome</b></div>
-            <div class="dropdown elemento col">
-            <button class=" botaocascata2 btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="nome elemento col">
                 <b>Categoria</b>
-            </button>
-            <ul class="dropdown-menu">
-                <li class="text-center dropdown-item">Banheiro</li>
-                <li class="text-center dropdown-item">Copa</li>
-                <li class="text-center dropdown-item">Escritório</li>
-                <li class="text-center dropdown-item">Laboratório</li>
-                <li class="text-center dropdown-item">Manutenção</li>
-            </ul>
             </div>
             <div class="nome elemento col"><b>Descrição</b></div>
             <div class="nome elementofinal col"><b>Solicitar</b></div>`;
