@@ -188,3 +188,20 @@ input {
     overflow-y: scroll;
     height: 100%;
 }
+.card {
+    border: 1px solid #E8F1F3;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin: 5px;
+  }
+  .card {
+    background-color: #f8f68a;
+    padding: 10px;
+    border: none;
+    width: 100%;
+  }
+  
+  .card.executada {
+    background-color: #bbf3aa;
+  }
+  

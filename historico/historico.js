@@ -4,7 +4,7 @@ const url = "http://192.168.32.175:3000";
 function listaAprovados() {
   var pesquisa = document.getElementById("barra-ordens");
   console.log(localStorage.getItem("token"));
-  
+
   axios
     .get(`${url}/ordem/search?id=${pesquisa.value}`, {
       headers: {
@@ -19,31 +19,51 @@ function listaAprovados() {
       console.log(data);
       console.log(data.length);
       const tabela = document.getElementById("tabela_ordem");
-      tabela.innerHTML = `<div class="nome elementonpedido col"><b>Nº do Pedido</b></div>
-      <div class="nome elementojust col"><b>Justificativa</b></div>
-      <div class="elementostatus col"> <b>Status</b>
-      </div>`;
+      tabela.innerHTML = "";
+
+      var ordens = {};
+
       for (var i = 0; i < data.length; i++) {
-        tabela.innerHTML += `<div class="elementoinicial col">${data[i].ordem_id}</div>
-        <div class="elemento col">${data[i].justificativa}</div>`
-        tabela.innerHTML += `<div class="elementofinal col"><span class="pendentes"><b>Pendente</b></span>
-                <button class="btpendentes float-none" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><img src="./img/editar.svg" alt=""></button>
-                <button onclick="deletarPendentes(${data[i].id})" class="btpendentes float-none" type="button"><img src="./img/excluir.svg" alt=""></button></div>`;
+        if (!ordens[data[i].ordem_id]) {
+          ordens[data[i].ordem_id] = {
+            justificativa: data[i].justificativa,
+            itens: [],
+            executada: data[i].executada,
+          };
+        }
+        ordens[data[i].ordem_id].itens.push(data[i].nome);
       }
+
+      for (var ordemId in ordens) {
+        var ordem = ordens[ordemId];
+
+        var card = document.createElement("div");
+        card.className = "card";
+        if (ordem.executada) {
+          card.classList.add("executada");
+        }
+
+        var idElement = document.createElement("div");
+        idElement.innerHTML = "<b>Nº do Pedido:</b> " + ordemId;
+        card.appendChild(idElement);
+
+        var justificativaElement = document.createElement("div");
+        justificativaElement.innerHTML = "<b>Justificativa:</b> " + ordem.justificativa;
+        card.appendChild(justificativaElement);
+
+        var itensElement = document.createElement("div");
+        itensElement.innerHTML = "<b>Itens:</b> " + ordem.itens.join(", ");
+        card.appendChild(itensElement);
+
+        tabela.appendChild(card);
+      }
+
+      // Definir o estilo grid para as colunas
+      tabela.style.display = "grid";
+      tabela.style.gridTemplateColumns = "repeat(auto-fit, minmax(300px, 1fr))";
+      tabela.style.gridGap = "20px";
     })
     .catch((res) => {
       console.log("Erro");
     });
 }
-// função excluir solicitacao
-function deletarPendentes(identidade) {
-  console.log(identidade);
-  axios.delete(`${url}/ordemz/${identidade}`, {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  });
-  location.reload();
-  alert("Solicitação excluida com sucesso!!");
-}
-

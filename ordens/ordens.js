@@ -6,7 +6,7 @@ function listarordens() {
   var get = document.getElementById("barra-ordens");
   console.log(localStorage.getItem("token"));
   axios
-  .get(`${url}/ordem/search?id=${get.value}`, {
+    .get(`${url}/ordem/search?id=${get.value}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -19,17 +19,65 @@ function listarordens() {
       console.log(data);
       console.log(data.length);
       const tabela = document.getElementById("tabela_ordem");
-      tabela.innerHTML = `<div class="nome elementoinicial col"><b>N° do Pedido</b></div>
-      <div class="nome elemento col"><b>Justificativa</b></div>
-      <div class="nome elemento col"><b>Itens</b></div>
-      <div class="nome n1 elementofinal col"><b>.</b></div>`;
-      for(var i = 0; i < data.length; i++){
-        tabela.innerHTML += `<div class="elementoinicial col">${data[i].ordem_id}</div>
-        <div class="elemento col">${data[i].justificativa}</div>
-        <div class="elemento col">${data[i].nome}</div>
-        <div class="elementofinal col">
-        <button onclick="aprovarordens(${data[i].id})" class="btpendentes float-none" type="button" ><img class="aprovar" src="../historico/img/aprovar.svg" alt=""></button>
-        <button onclick="rejeitarordens(${data[i].id})" class="btpendentes float-none" type="button"><img src="../historico/img/excluir.svg" alt=""></button></div>`;
+      tabela.innerHTML = "";
+
+      var ordens = {};
+
+      for (var i = 0; i < data.length; i++) {
+        if (!ordens[data[i].ordem_id]) {
+          ordens[data[i].ordem_id] = {
+            justificativa: data[i].justificativa,
+            itens: [],
+            executada: data[i].executada,
+          };
+        }
+        ordens[data[i].ordem_id].itens.push(data[i].nome);
+      }
+
+      for (var ordemId in ordens) {
+        var ordem = ordens[ordemId];
+
+        if (!ordem.executada) { // Verifica se a propriedade "executada" é falsa
+          var card = document.createElement("div");
+          card.className = "card";
+
+          var idElement = document.createElement("div");
+          idElement.innerHTML = "<b>Nº do Pedido:</b> " + ordemId;
+          card.appendChild(idElement);
+
+          var justificativaElement = document.createElement("div");
+          justificativaElement.innerHTML = "<b>Justificativa:</b> " + ordem.justificativa;
+          card.appendChild(justificativaElement);
+
+          var itensElement = document.createElement("div");
+          itensElement.innerHTML = "<b>Itens:</b> " + ordem.itens.join(", ");
+          card.appendChild(itensElement);
+
+          var buttonContainer = document.createElement("div");
+          buttonContainer.className = "button-container";
+
+          var aprovarButton = document.createElement("button");
+          aprovarButton.className = "btpendentes float-none";
+          aprovarButton.setAttribute("type", "button");
+          aprovarButton.innerHTML = "<img class='aprovar' src='../historico/img/aprovar.svg' alt=''>";
+          aprovarButton.addEventListener("click", function() {
+            aprovarordens(ordemId);
+          });
+          buttonContainer.appendChild(aprovarButton);
+
+          var rejeitarButton = document.createElement("button");
+          rejeitarButton.className = "btpendentes float-none";
+          rejeitarButton.setAttribute("type", "button");
+          rejeitarButton.innerHTML = "<img src='../historico/img/excluir.svg' alt=''>";
+          rejeitarButton.addEventListener("click", function() {
+            rejeitarordens(ordemId);
+          });
+          buttonContainer.appendChild(rejeitarButton);
+
+          card.appendChild(buttonContainer);
+
+          tabela.appendChild(card);
+        }
       }
     })
     .catch((res) => {
@@ -39,27 +87,28 @@ function listarordens() {
 
 // função para rejeitar ordens
 function rejeitarordens(idExcluir) {
-    axios.delete(`${url}/ordemz/${idExcluir}`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
-    .then(function (res) {
-      return res.data;
-    })
-    .catch((res) => {
-      console.log("Erro");
-      console.log(res)
-    });
+  console.log(idExcluir)
+  axios.delete(`${url}/ordemz/${idExcluir}`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  })
+  .then(function (res) {
+    console.log(res.data); // opcional: exibir dados da resposta
     location.reload();
     alert("Ordem rejeitada com sucesso!!");
-  }
+  })
+  .catch((error) => {
+    console.log("Erro:", error);
+  });
+}
+
 
 //função para aprovar ordens
 function aprovarordens(idAprovar) {
   var json = {
     "justificativa": "eu preciso de papeis",
-    "itens": [1,15,16,17,18]
+    "itens": []
   }
   axios.post(`${url}/validaordem/${idAprovar}`, json, {
     headers: {
@@ -73,6 +122,6 @@ function aprovarordens(idAprovar) {
     console.log("Erro");
     console.log(res)
   });
-  //location.reload();
+  location.reload();
   alert("Ordem Aprovada com sucesso!!");
 }
