@@ -72,8 +72,6 @@ function solicitar() {
       console.log(res);
       
     });
-    
-  location.reload();
 }
 //função para carregar o modal
 function carregarModal() {
@@ -89,7 +87,7 @@ function carregarModal() {
                               ${todosItens[j].categoria}
                           </td>
                       </tr>
-        `;
+                      `;
       }
     }
   }

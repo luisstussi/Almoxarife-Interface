@@ -1,10 +1,25 @@
 const url = "http://192.168.32.175:3000";
 
-// função para pesquisar as ordens
+function listaraprovados() {
+  localStorage.setItem("filtro_status", true);
+  console.log("entrou aprovados");
+  listaAprovados();
+}
+
+function listarpendentes() {
+  localStorage.setItem("filtro_status", false);
+  console.log("entrou pendentes");
+  listaAprovados();
+}
+
+// função para pesquisar as ordens aprovadas
 function listaAprovados() {
+  const status_filter = localStorage.getItem("filtro_status");
   var pesquisa = document.getElementById("barra-ordens");
   console.log(localStorage.getItem("token"));
 
+  console.log("listaAprovados");
+  console.log(pesquisa.value);
   axios
     .get(`${url}/ordem/search?id=${pesquisa.value}`, {
       headers: {
@@ -12,10 +27,12 @@ function listaAprovados() {
       },
     })
     .then(function (res) {
+      console.log("primeiro then");
       console.log(res.data);
       return res.data;
     })
     .then(function (data) {
+      console.log("segundo then");
       console.log(data);
       console.log(data.length);
       const tabela = document.getElementById("tabela_ordem");
@@ -66,4 +83,16 @@ function listaAprovados() {
     .catch((res) => {
       console.log("Erro");
     });
+}
+
+// função excluir solicitacao
+function deletarPendentes(identidade) {
+  console.log(identidade);
+  axios.delete(`${url}/ordemz/${identidade}`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+  location.reload();
+  alert("Solicitação excluida com sucesso!!");
 }
