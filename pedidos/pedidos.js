@@ -72,6 +72,8 @@ function solicitar() {
       console.log(res);
       
     });
+    location.reload();
+    alert("Solicitação excluida com sucesso!!");
 }
 //função para carregar o modal
 function carregarModal() {
